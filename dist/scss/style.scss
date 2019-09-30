@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,800,900&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/************************************************
+************* Variables
+***********************************************/
+// Colors
+$color-earthgreen: #8d8741; // base color
+$color-teal: #659d8d; // base color
+$color-text: #fbeec1;
+$color-white: #f0f8ff; // for text
+$color-black: #2f2f4f;
+
+// Font sizes
+$font-size-sm: 16px;
+$font-size-m: 28px;
+$font-size-bg: 38px;
+
+// Font family, weight: 400, 800, 900
+$font: "Nunito", sans-serif;
+
+/************************************************
+************* Mixins
+***********************************************/
+@mixin clip-path-right {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+@mixin clip-path-left {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+
+@mixin subtitle-border-bottom-dark {
+  border-bottom: 0.05rem solid lighten($color-black, 20%);
+  padding: 1rem 1rem 0;
+}
+
+@mixin subtitle-border-bottom-light {
+  border-bottom: 0.05rem solid darken($color-white, 10%);
+  padding: 1rem 1rem 0;
+}
+/************************************************
+************* Header
+***********************************************/
+
+.header {
+  width: 100%;
+  height: 60vh;
+  //background-image: lighten($color-black, 10%), url(img/background.jpg);
+  //background-image: url(img/background.jpg);
+  //background-color: lighten($color-black, 10%);
+  background-image: linear-gradient(
+      to left top,
+      $color-black,
+      rgba($color-teal, 0.8)
+    ),
+    url(../img/background.jpg);
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  z-index: 99;
+
+  @include clip-path-right;
+
+  &__logo {
+    img {
+      width: 3rem;
+      height: auto;
+    }
+  }
+
+  &__heading {
+    margin: 1rem auto -0.3rem;
+    width: 90%;
+    color: $color-white;
+    font: 900 $font-size-bg $font;
+    text-transform: uppercase;
+
+    @include subtitle-border-bottom-light;
+  }
+  &__sub {
+    margin: 1rem auto;
+    width: 95%;
+    padding: 2rem;
+    font: $font-size-sm $font;
+    color: lighten($color-black, 60%);
+  }
+}
+
+/************************************************
+************* About
+***********************************************/
+.container {
+  margin: -4.5rem auto 0;
+  //padding: 1rem;
+}
+
+.about {
+  width: 100%;
+  height: 80vh;
+  background-color: $color-teal;
+  padding: 6rem 2rem 2rem;
+  @include clip-path-left;
+
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+    display: block;
+    margin: 2rem auto;
+    padding-bottom: 1rem;
+    @include subtitle-border-bottom-light;
+  }
+}
+/************************************************
+************* Skills
+***********************************************/
+
+/************************************************
+************* Projects
+***********************************************/
+
+/************************************************
+************* Blog
+***********************************************/
+
+/************************************************
+************* Footer
+***********************************************/
