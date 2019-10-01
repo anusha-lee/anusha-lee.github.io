@@ -30,24 +30,29 @@ ul li {
 .header {
   width: 100%;
   height: 50vh;
-  background-image: linear-gradient(to left top, #2f2f4f, rgba(101, 157, 141, 0.8)), url(../img/background.jpg);
+  background-image: linear-gradient(to left top, #052334, rgba(19, 61, 85, 0.6)), url(../img/background.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
   z-index: 99;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); }
-  .header__logo img {
-    width: 3rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); }
+  .header__logo {
+    margin: 0 auto;
+    padding-top: 5rem;
+    width: 90%;
     height: auto; }
+    .header__logo img {
+      width: 5rem;
+      height: auto; }
   .header__heading {
-    margin: 4rem auto 0;
+    margin: 0.5rem auto 0;
     width: 90%;
     color: #f0f8ff;
     font: 900 38px "Nunito", sans-serif;
     text-transform: uppercase;
     padding: 1rem 1rem 0;
-    border-bottom: 0.05rem solid #bde0ff; }
+    border-bottom: 0.05rem solid #5493b8; }
   .header__sub {
     margin: 1rem auto;
     width: 95%;
@@ -56,7 +61,7 @@ ul li {
     color: #cecee2; }
 
 .container {
-  margin: -7.5rem auto 0; }
+  margin: -6.5rem auto 0; }
 
 /************************************************
 ************* About
@@ -64,17 +69,16 @@ ul li {
 .about {
   margin: 0 auto;
   width: 100%;
-  height: auto;
-  background-color: #659d8d;
+  height: 100vh;
+  background-color: #32749a;
   padding: 10rem 2rem 2rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  position: relative;
+  z-index: 80;
   display: grid;
   grid-template-columns: 60% 36%;
-  grid-template-rows: 1fr 4fr;
-  /************************************************
-  ************* Skills
-  ***********************************************/ }
+  grid-template-rows: 1fr 4fr; }
   .about__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff;
@@ -83,7 +87,7 @@ ul li {
     margin: 1rem 0;
     text-align: right;
     justify-self: end;
-    border-bottom: 0.05rem solid #bde0ff;
+    border-bottom: 0.05rem solid #5493b8;
     grid-column: 1 / 2;
     grid-row: 1 / 2; }
   .about__img {
@@ -105,23 +109,79 @@ ul li {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     justify-self: end; }
-  .about .skills__title {
+
+/************************************************
+  ************* Skills
+  ***********************************************/
+.skills {
+  margin: -8rem auto 0;
+  width: 100%;
+  height: 120vh;
+  background-color: #5493b8;
+  padding: 10rem 2rem 2rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  position: relative;
+  z-index: 70; }
+  .skills__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff; }
-  .about .skills__img img {
-    position: absolute;
-    right: 0;
-    top: 2rem;
-    width: 80%; }
+  .skills__img {
+    position: relative; }
+    .skills__img img {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      width: 80%; }
 
 /************************************************
 ************* Projects
 ***********************************************/
+.projects {
+  margin: -9rem auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #32749a;
+  padding: 10rem 2rem 2rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  position: relative;
+  z-index: 60; }
+  .projects__title {
+    font: 800 28px "Nunito", sans-serif;
+    color: #f0f8ff; }
+  .projects__img {
+    position: relative; }
+    .projects__img img {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      width: 80%; }
+
 /************************************************
 ************* Blog
 ***********************************************/
+.blog {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #133d55;
+  padding: 10rem 2rem 2rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  position: relative;
+  z-index: 50; }
+  .blog__title {
+    font: 800 28px "Nunito", sans-serif;
+    color: #f0f8ff; }
+
 /************************************************
 ************* Footer
 ***********************************************/
+.footer {
+  margin: -10rem 0;
+  width: 100%;
+  height: 40rem;
+  background-image: linear-gradient(to left top, #052334, rgba(19, 61, 85, 0.6)), url(../img/background.jpg); }
 
 /*# sourceMappingURL=style.css.map */

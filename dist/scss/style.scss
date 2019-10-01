@@ -28,9 +28,10 @@ ul li {
 ************* Variables
 ***********************************************/
 // Colors
-$color-earthgreen: #8d8741; // base color
-$color-teal: #659d8d; // base color
-$color-text: #fbeec1;
+$color-deep-blue: #052334; // header color
+$color-teal-blue: #133d55;
+$color-light-teal: #32749a; // about
+$color-light-blue: #5493b8;
 $color-white: #f0f8ff; // for text
 $color-black: #2f2f4f;
 
@@ -46,13 +47,13 @@ $font: "Nunito", sans-serif;
 ************* Mixins
 ***********************************************/
 @mixin clip-path-right {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
 }
 
 @mixin clip-path-left {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 }
 
 @mixin subtitle-border-bottom-dark {
@@ -60,8 +61,9 @@ $font: "Nunito", sans-serif;
 }
 
 @mixin subtitle-border-bottom-light {
-  border-bottom: 0.05rem solid darken($color-white, 10%);
+  border-bottom: 0.05rem solid $color-light-blue;
 }
+
 /************************************************
 ************* Header
 ***********************************************/
@@ -69,13 +71,10 @@ $font: "Nunito", sans-serif;
 .header {
   width: 100%;
   height: 50vh;
-  //background-image: lighten($color-black, 10%), url(img/background.jpg);
-  //background-image: url(img/background.jpg);
-  //background-color: lighten($color-black, 10%);
   background-image: linear-gradient(
       to left top,
-      $color-black,
-      rgba($color-teal, 0.8)
+      $color-deep-blue,
+      rgba($color-teal-blue, 0.6)
     ),
     url(../img/background.jpg);
 
@@ -83,18 +82,22 @@ $font: "Nunito", sans-serif;
   background-position: top;
   position: relative;
   z-index: 99;
-
   @include clip-path-right;
 
   &__logo {
+    margin: 0 auto;
+    padding-top: 5rem;
+    width: 90%;
+    height: auto;
+
     img {
-      width: 3rem;
+      width: 5rem;
       height: auto;
     }
   }
 
   &__heading {
-    margin: 4rem auto 0;
+    margin: 0.5rem auto 0;
     width: 90%;
     color: $color-white;
     font: 900 $font-size-bg $font;
@@ -113,7 +116,7 @@ $font: "Nunito", sans-serif;
 }
 
 .container {
-  margin: -7.5rem auto 0;
+  margin: -6.5rem auto 0;
   //padding: 1rem;
 }
 
@@ -123,10 +126,12 @@ $font: "Nunito", sans-serif;
 .about {
   margin: 0 auto;
   width: 100%;
-  height: auto;
-  background-color: $color-teal;
+  height: 100vh;
+  background-color: $color-light-teal;
   padding: 10rem 2rem 2rem;
   @include clip-path-left;
+  position: relative;
+  z-index: 80;
 
   display: grid;
   grid-template-columns: 60% 36%;
@@ -173,24 +178,34 @@ $font: "Nunito", sans-serif;
     grid-row: 2 / 3;
     justify-self: end;
   }
+}
 
-  /************************************************
+/************************************************
   ************* Skills
   ***********************************************/
 
-  .skills {
-    &__title {
-      font: 800 $font-size-m $font;
-      color: $color-white;
-    }
+.skills {
+  margin: -8rem auto 0;
+  width: 100%;
+  height: 120vh;
+  background-color: $color-light-blue;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-right;
+  position: relative;
+  z-index: 70;
 
-    &__img {
-      & img {
-        position: absolute;
-        right: 0;
-        top: 2rem;
-        width: 80%;
-      }
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+  }
+
+  &__img {
+    position: relative;
+    & img {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      width: 80%;
     }
   }
 }
@@ -199,10 +214,72 @@ $font: "Nunito", sans-serif;
 ************* Projects
 ***********************************************/
 
+.projects {
+  margin: -9rem auto;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-light-teal;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-left;
+  position: relative;
+  z-index: 60;
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+  }
+
+  &__img {
+    position: relative;
+    & img {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      width: 80%;
+    }
+  }
+}
+
 /************************************************
 ************* Blog
 ***********************************************/
 
+.blog {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-teal-blue;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-right;
+  position: relative;
+  z-index: 50;
+
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+  }
+
+  // &__img {
+  //   position: relative;
+  //   & img {
+  //     position: absolute;
+  //     right: 0;
+  //     top: 2rem;
+  //     width: 80%;
+  //   }
+  // }
+}
+
 /************************************************
 ************* Footer
 ***********************************************/
+.footer {
+  margin: -10rem 0;
+  width: 100%;
+  height: 40rem;
+  background-image: linear-gradient(
+      to left top,
+      $color-deep-blue,
+      rgba($color-teal-blue, 0.6)
+    ),
+    url(../img/background.jpg);
+}
