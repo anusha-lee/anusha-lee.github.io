@@ -79,7 +79,7 @@ img {
   z-index: 80;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(fit, 1fr) 1fr 3fr; }
+  grid-template-rows: 4fr 1fr 5fr; }
   .about__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff;
@@ -102,7 +102,7 @@ img {
       position: absolute;
       right: 0;
       top: 0;
-      width: 40%;
+      max-width: 40%;
       height: auto; }
   .about__text {
     width: 85%;
@@ -119,28 +119,52 @@ img {
 .skills {
   margin: -9rem auto 0;
   width: 100%;
-  height: 120vh;
+  height: auto;
   background-color: #5493b8;
   padding: 10rem 2rem 2rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
   position: relative;
-  z-index: 70; }
+  z-index: 70;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr 4fr 1fr; }
   .skills__title {
     font: 800 28px "Nunito", sans-serif;
-    color: #f0f8ff; }
-  .skills__img {
-    background-color: yellowgreen;
-    position: relative;
+    color: #f0f8ff;
+    display: inline-block;
     width: 100%;
-    height: auto; }
+    height: fit-content;
+    margin: 1rem 0;
+    border-bottom: 0.05rem solid #55558f;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: left;
+    justify-self: start; }
+  .skills__img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; }
     .skills__img img {
       position: absolute;
-      right: 0;
-      width: 50%; }
-  .skills__box--title {
+      left: 0;
+      top: 0;
+      max-width: 40%;
+      height: auto; }
+  .skills__box {
     color: #f0f8ff;
-    font: 400 16px "Nunito", sans-serif; }
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr; }
+    .skills__box--title {
+      font: 900 16px "Nunito", sans-serif; }
+    .skills__box--box--title {
+      font: 900 16px "Nunito", sans-serif; }
+
+.content-1 {
+  font: 400 16px "Nunito", sans-serif; }
 
 /************************************************
 ************* Projects
@@ -159,12 +183,15 @@ img {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff; }
   .projects__img {
+    width: 100%;
+    height: fit;
     position: relative; }
     .projects__img img {
       position: absolute;
       right: 0;
-      top: 2rem;
-      width: 80%; }
+      top: 0;
+      max-width: 40%;
+      height: auto; }
 
 /************************************************
 ************* Blog
