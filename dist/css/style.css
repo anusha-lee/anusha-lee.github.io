@@ -119,7 +119,7 @@ img {
 .skills {
   margin: -9rem auto 0;
   width: 100%;
-  height: auto;
+  height: 120vh;
   background-color: #5493b8;
   padding: 10rem 2rem 2rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
@@ -158,13 +158,15 @@ img {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr; }
-    .skills__box--title {
-      font: 900 16px "Nunito", sans-serif; }
-    .skills__box--box--title {
-      font: 900 16px "Nunito", sans-serif; }
+    .skills__box--subtitle {
+      font: 800 16px "Nunito", sans-serif; }
+    .skills__box--content {
+      font: 400 16px "Nunito", sans-serif; }
+      .skills__box--content-1 {
+        font: 400 16px "Nunito", sans-serif; }
 
-.content-1 {
-  font: 400 16px "Nunito", sans-serif; }
+#subtitle {
+  font-size: 100px; }
 
 /************************************************
 ************* Projects
@@ -178,7 +180,10 @@ img {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
   position: relative;
-  z-index: 60; }
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr 4fr 1fr; }
   .projects__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff; }
@@ -205,8 +210,11 @@ img {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
   position: relative;
-  z-index: 50; }
-  .blog__title {
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr 4fr 1fr; }
+  .blog__title1 {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff; }
 

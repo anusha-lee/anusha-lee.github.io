@@ -179,7 +179,7 @@ img {
       position: absolute;
       right: 0;
       top: 0;
-      max-width: 40%;
+      max-width: 60%;
       height: auto;
     }
   }
@@ -203,7 +203,7 @@ img {
 .skills {
   margin: -9rem auto 0;
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-color: $color-light-blue;
   padding: 10rem 2rem 2rem;
   @include clip-path-right;
@@ -231,7 +231,7 @@ img {
 
   &__img {
     width: 100%;
-    height: auto;
+    height: fit-content;
     position: relative;
 
     grid-column: 1 / 2;
@@ -241,7 +241,7 @@ img {
       position: absolute;
       left: 0;
       top: 0;
-      max-width: 40%;
+      max-width: 60%;
       height: auto;
     }
   }
@@ -251,25 +251,23 @@ img {
     @include section-grid-mobile;
     grid-template-rows: 1fr 5fr;
 
-    &--title {
-      font: 900 $font-size-sm $font;
+    &--subtitle {
+      font: 800 $font-size-m $font;
     }
 
-    &--box {
-      &--title {
-        font: 900 $font-size-sm $font;
-      }
-      &--content {
+    &--content {
+      width: 80%;
+      border: 2px solid pink;
+      font: 400 $font-size-sm $font;
+      &-1 {
+        font: 400 $font-size-sm $font;
       }
     }
   }
-}
 
-.content {
-  &-1 {
-    font: 400 $font-size-sm $font;
-    &__text {
-    }
+  &__learn-more {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
   }
 }
 
@@ -291,6 +289,9 @@ img {
     color: $color-white;
   }
 
+  @include section-grid-mobile;
+  grid-template-rows: 3fr 1fr 4fr 1fr;
+
   &__img {
     width: 100%;
     height: fit;
@@ -303,7 +304,7 @@ img {
       position: absolute;
       right: 0;
       top: 0;
-      max-width: 40%;
+      max-width: 60%;
       height: auto;
     }
   }
@@ -323,7 +324,10 @@ img {
   position: relative;
   z-index: 50;
 
-  &__title {
+  @include section-grid-mobile;
+  grid-template-rows: 3fr 1fr 4fr 1fr;
+
+  &__title1 {
     font: 800 $font-size-m $font;
     color: $color-white;
   }
