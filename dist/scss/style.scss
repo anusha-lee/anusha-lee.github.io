@@ -16,9 +16,9 @@ a {
   text-decoration: none;
 }
 
-ul li {
-  list-style: none;
-}
+// ul li {
+//   list-style: none;
+// }
 
 /************************************************
 ************* Variables
@@ -123,7 +123,7 @@ img {
     width: 95%;
     padding: 2rem;
     font: $font-size-sm $font;
-    color: lighten($color-black, 60%);
+    color: pink; //  lighten($color-black, 60%);
   }
 }
 
