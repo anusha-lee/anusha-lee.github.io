@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Anusha Lee</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
+    <!-- reference website: https://html5up.net/uploads/demos/solid-state/ -->
     <header class="header">
-      <span class="header__logo"></span>
+      <div class="header__logo">
+        <img src="img/icons/png/006-html-coding.png" alt="code logo" />
+      </div>
       <h1 class="header__heading">This is Anusha</h1>
       <div class="header__sub">A self-taught web developer</div>
     </header>
     <main class="container">
       <section class="about">
         <h2 class="about__title">About me</h2>
-        <div class="about__img"></div>
-        <span class="about__line"> </span>
+        <div class="about__img">
+          <img src="img/profile.jpg" alt="profile" />
+        </div>
         <p class="about__text">
           I’m a self-taught web developer, and this website is about my projects
           and my journey of learning how to code. I am interested in full-stack
@@ -27,20 +32,39 @@
       </section>
       <section class="skills">
         <h2 class="skills__title">My skills</h2>
-        <div class="skills__img"></div>
-        <span class="skills__line"></span>
-        <p class="skills__text"></p>
-        <div class="skills__learn-more learn-more">
-          <button class="skills__learn-more--btn learn-more--btn"></button>
-          <div class="skills__learn-more--text learn-more--text">
-            Learn more
+        <div class="skills__img">
+          <img src="img/img01.jpg" alt="sea view" />
+        </div>
+        <div class="skills__box">
+          <h3 class="skills__box--subtitle">Frontend</h3>
+          <div class="skills__box--content">
+            <div class="skills__box--content-1">
+              <strong>HTML5</strong> - including basic SEO, Accessibility
+            </div>
+            <div class="skills__box--content-1">
+              <strong>CSS3</strong> - Grid, Flexbox, Media Queries,
+              Pre-processor (SASS), BEM
+            </div>
+            <div class="skills__box--content-1">
+              <strong>JavaScript</strong> - ES5, ES6
+              <p class="content-1__text"></p>
+            </div>
+            <div class="skills__box--content-1">
+              <strong>Others</strong> - Git and GitHub, Build tools
+            </div>
           </div>
+        </div>
+        <div class="skills__btn btn">
+          <a href="#" class="skills__btn--link btn-link">
+            Certificate gallery
+          </a>
         </div>
       </section>
       <section class="projects">
-        <h2 class="projects__title"></h2>
-        <div class="projects__img"></div>
-        <span class="projects__line"></span>
+        <h2 class="projects__title">My projects</h2>
+        <div class="projects__img">
+          <img src="img/img03.jpg" alt="sea view" />
+        </div>
         <p class="projects__text"></p>
         <div class="projects__learn-more learn-more">
           <button class="projects__learn-more--btn learn-more--btn"></button>
@@ -50,7 +74,8 @@
         </div>
       </section>
       <section class="blog">
-        <h2 class="blog__title">Latest blog posts</h2>
+        <h2 class="blog__title1">Blog</h2>
+        <!-- <h3 class="blog__title2">Latest blog posts</h3> -->
         <div class="blog__box">
           <ul class="blog__box--lists">
             <li class="blog__box--lists-item">Blog 1</li>
@@ -61,7 +86,7 @@
       </section>
     </main>
     <footer class="footer">
-      <h2 class="footer__title">Get in touch</h2>
+      <h2 class="footer__title">Let's get in touch!</h2>
       <span class="footer__line"></span>
       <div class="footer__social-media">
         <div class="footer__social-media--twitter"><a href="">Twitter</a></div>
@@ -73,28 +98,6 @@
       <div class="footer__credit">
         <div class="footer__credit--design">
           Design: <a href="https://html5up.net/">HTML5UP</a>
-        </div>
-        <div class="footer__credit--icon1">
-          Icons made by
-          <a
-            href="https://www.flaticon.com/authors/pixel-perfect"
-            title="Pixel perfect"
-            >Pixel perfect</a
-          >
-          from
-          <a href="https://www.flaticon.com/" title="Flaticon"
-            >www.flaticon.com</a
-          >
-        </div>
-        <div class="footer__credit--icon2">
-          Icons made by
-          <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
-            >Freepik</a
-          >
-          from
-          <a href="https://www.flaticon.com/" title="Flaticon"
-            >www.flaticon.com</a
-          >
         </div>
       </div>
     </footer>

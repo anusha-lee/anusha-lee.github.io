@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,800,900&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+a {
+  text-decoration: none;
+}
+
+// ul li {
+//   list-style: none;
+// }
+
+/************************************************
+************* Variables
+***********************************************/
+// Colors
+$color-deep-blue: #052334; // header color
+$color-teal-blue: #133d55;
+$color-light-teal: #32749a; // about
+$color-light-blue: #5493b8;
+$color-white: #f0f8ff; // for text
+$color-black: #2f2f4f;
+
+// Font sizes
+$font-size-sm: 16px;
+$font-size-m: 28px;
+$font-size-bg: 38px;
+
+// Font family, weight: 400, 800, 900
+$font: "Nunito", sans-serif;
+
+/************************************************
+************* Mixins
+***********************************************/
+@mixin clip-path-right {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+}
+
+@mixin clip-path-left {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+}
+
+@mixin subtitle-border-bottom-dark {
+  border-bottom: 0.05rem solid lighten($color-black, 20%);
+}
+
+@mixin subtitle-border-bottom-light {
+  border-bottom: 0.05rem solid $color-light-blue;
+}
+
+@mixin section-grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@mixin image-hover {
+  -webkit-transform: translateY(-0.5rem);
+  -ms-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+
+img {
+  border-radius: 50%;
+  box-shadow: 2px 5px 5px $color-black;
+}
+
+/************************************************
+************* Header
+***********************************************/
+
+.header {
+  width: 100%;
+  min-height: 60vh;
+  background-image: linear-gradient(
+      to left top,
+      $color-deep-blue,
+      rgba($color-teal-blue, 0.6)
+    ),
+    url(../img/background.jpg);
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  z-index: 99;
+  @include clip-path-right;
+
+  &__logo {
+    margin: 0 auto;
+    padding: 5rem 0 0;
+    width: 90%;
+    height: auto;
+
+    img {
+      width: 5rem;
+      height: auto;
+    }
+  }
+
+  &__heading {
+    margin: 0.5rem auto 0;
+    width: 90%;
+    color: $color-white;
+    font: 900 $font-size-bg $font;
+    text-transform: uppercase;
+    padding: 1rem 1rem 0;
+
+    @include subtitle-border-bottom-light;
+  }
+  &__sub {
+    margin: 1rem auto;
+    width: 95%;
+    padding: 2rem;
+    font: $font-size-sm $font;
+    color: lighten($color-black, 60%);
+  }
+}
+
+.container {
+  margin: -6.5rem auto 0;
+  //padding: 1rem;
+}
+
+/************************************************
+************* About
+***********************************************/
+.about {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-light-teal;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-left;
+  position: relative;
+  z-index: 80;
+
+  @include section-grid-mobile;
+  grid-template-rows: 4fr 1fr 5fr;
+
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 3fr 1fr 4fr;
+
+  // for screen larger than 480px
+  // grid-template-columns: 60% 36%;
+  // grid-template-rows: 1fr 4fr;
+
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+
+    margin: 1rem 0;
+    text-align: right;
+    justify-self: end;
+
+    @include subtitle-border-bottom-light;
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    & img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      min-width: 25rem;
+      max-width: 30%;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+    & img:hover {
+      @include image-hover;
+    }
+  }
+
+  &__text {
+    width: 85%;
+    height: auto;
+    font: 400 $font-size-sm $font;
+    color: $color-white;
+    text-align: right;
+
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    justify-self: end;
+  }
+}
+
+/************************************************
+  ************* Skills
+  ***********************************************/
+
+.skills {
+  margin: -9rem auto 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-light-blue;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-right;
+  position: relative;
+  z-index: 70;
+
+  @include section-grid-mobile;
+  grid-template-rows: 3fr 1fr 4fr 1fr;
+
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    margin: 1rem 0;
+
+    @include subtitle-border-bottom-dark;
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: left;
+    justify-self: start;
+  }
+
+  &__img {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    & img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: 30%;
+      max-width: 60%;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+    & img:hover {
+      @include image-hover;
+    }
+  }
+
+  &__box {
+    color: $color-white;
+    @include section-grid-mobile;
+    grid-template-rows: 1fr 5fr;
+
+    &--subtitle {
+      font: 800 $font-size-m $font;
+    }
+
+    &--content {
+      width: 80%;
+      border: 2px solid pink;
+      font: 400 $font-size-sm $font;
+      &-1 {
+        font: 400 $font-size-sm $font;
+      }
+    }
+  }
+
+  &__learn-more {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+}
+
+/************************************************
+************* Projects
+***********************************************/
+
+.projects {
+  margin: -11rem auto;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-light-teal;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-left;
+  position: relative;
+  z-index: 60;
+  &__title {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+  }
+
+  @include section-grid-mobile;
+  grid-template-rows: 3fr 1fr 4fr 1fr;
+
+  &__img {
+    width: 100%;
+    height: fit;
+    position: relative;
+
+    // grid-column: 1 / 2;
+    // grid-row: 1 / 2;
+
+    & img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 30%;
+      max-width: 60%;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+    & img:hover {
+      @include image-hover;
+    }
+  }
+}
+
+/************************************************
+************* Blog
+***********************************************/
+
+.blog {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-teal-blue;
+  padding: 10rem 2rem 2rem;
+  @include clip-path-right;
+  position: relative;
+  z-index: 50;
+
+  @include section-grid-mobile;
+  grid-template-rows: 3fr 1fr 4fr 1fr;
+
+  &__title1 {
+    font: 800 $font-size-m $font;
+    color: $color-white;
+  }
+
+  // &__img {
+  //   position: relative;
+  //   & img {
+  //     position: absolute;
+  //     right: 0;
+  //     top: 2rem;
+  //     width: 80%;
+  //   }
+  // }
+}
+
+/************************************************
+************* Footer
+***********************************************/
+.footer {
+  margin: -10rem 0;
+  width: 100%;
+  height: 40rem;
+  background-image: linear-gradient(
+      to left top,
+      $color-deep-blue,
+      rgba($color-teal-blue, 0.6)
+    ),
+    url(../img/background.jpg);
+}
+
+/************************************************
+************* Learn more button
+***********************************************/
+// .btn {
+//   display: inline-block;
+//   text-transform: uppercase;
+//   color: $color-white;
+//   width: 16rem;
+//   height: 12rem;
+//   line-height: 12rem;
+//   border-radius: 50%;
+//   text-align: center;
+//   vertical-align: middle;
+//   overflow: hidden;
+//   background-image: linear-gradient(
+//     45deg,
+//     $color-teal-blue 0%,
+//     $color-light-blue 100%
+//   );
+
+//   &--link {
+//     width: 100%;
+//   }
+// }
+
+.btn--link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  transition: 0.4s;
+}
+
+.btn--link:hover {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
