@@ -36,8 +36,8 @@ img {
   background-position: top;
   position: relative;
   z-index: 99;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
   .header__logo {
     margin: 0 auto;
     padding: 5rem 0 0;
@@ -59,44 +59,45 @@ img {
     width: 95%;
     padding: 2rem;
     font: 16px "Nunito", sans-serif;
-    color: pink; }
+    color: #cecee2; }
 
 .container {
-  margin: -6.5rem auto 0; }
+  margin: -5.5rem auto 0; }
 
 /************************************************
 ************* About
 ***********************************************/
 .about {
-  margin: 0 auto;
+  margin: -7rem auto 0;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-color: #32749a;
   padding: 10rem 2rem 2rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   position: relative;
   z-index: 80;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 4fr 1fr 5fr; }
+  grid-template-rows: minmax(25rem, 30%) 9% minmax(35%, 45%); }
   .about__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff;
     display: inline-block;
+    margin: 1rem 0;
     width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    margin: 1rem 0;
+    text-transform: uppercase;
+    border-bottom: 0.05rem solid #5493b8;
     text-align: right;
     justify-self: end;
-    border-bottom: 0.05rem solid #5493b8;
     grid-column: 1 / 2;
     grid-row: 2 / 3; }
   .about__img {
     width: 100%;
-    height: fit;
+    height: auto;
     position: relative;
     grid-column: 1 / 2;
     grid-row: 1 / 2; }
@@ -104,15 +105,17 @@ img {
       position: absolute;
       right: 0;
       top: 0;
-      max-width: 60%;
+      min-width: 23rem;
+      max-width: 35%;
       height: auto;
-      -webkit-transition: all 0.5s ease-in-out;
-      transition: all 0.5s ease-in-out; }
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
     .about__img img:hover {
-      -webkit-transform: translateY(1rem);
-      transform: translateY(1rem); }
+      -webkit-transform: translateY(-0.5rem);
+      transform: translateY(-0.5rem); }
   .about__text {
     width: 85%;
+    padding-top: 1.5rem;
     height: auto;
     font: 400 16px "Nunito", sans-serif;
     color: #f0f8ff;
@@ -125,27 +128,28 @@ img {
   ************* Skills
   ***********************************************/
 .skills {
-  margin: -9rem auto 0;
+  margin: -10rem auto 0;
   width: 100%;
-  height: 100vh;
+  height: 130vh;
   background-color: #5493b8;
   padding: 10rem 2rem 2rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   position: relative;
   z-index: 70;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr 4fr 1fr; }
+  grid-template-rows: minmax(25rem, 30%) 9% minmax(25%, 35%) 12%; }
   .skills__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff;
     display: inline-block;
+    margin: 1rem 0;
     width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    margin: 1rem 0;
+    text-transform: uppercase;
     border-bottom: 0.05rem solid #55558f;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -163,21 +167,29 @@ img {
       position: absolute;
       left: 0;
       top: 0;
-      max-width: 60%;
-      height: auto; }
+      min-width: 23rem;
+      max-width: 35%;
+      height: auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    .skills__img img:hover {
+      -webkit-transform: translateY(-0.5rem);
+      transform: translateY(-0.5rem); }
   .skills__box {
     color: #f0f8ff;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr; }
     .skills__box--subtitle {
-      font: 800 28px "Nunito", sans-serif; }
+      display: inline-block;
+      font: 800 16px "Nunito", sans-serif;
+      height: auto; }
     .skills__box--content {
-      width: 80%;
-      border: 2px solid pink;
+      width: 90%;
       font: 400 16px "Nunito", sans-serif; }
       .skills__box--content-1 {
-        font: 400 16px "Nunito", sans-serif; }
+        font: 400 16px "Nunito", sans-serif;
+        padding: 0.5rem; }
   .skills__learn-more {
     grid-column: 1 / 2;
     grid-row: 4 / 5; }
@@ -186,43 +198,94 @@ img {
 ************* Projects
 ***********************************************/
 .projects {
-  margin: -11rem auto;
+  margin: -10rem auto;
   width: 100%;
-  height: 100vh;
+  max-height: 200vh;
   background-color: #32749a;
   padding: 10rem 2rem 2rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   position: relative;
   z-index: 60;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr 4fr 1fr; }
+  grid-template-rows: 9% repeat(2, minmax(auto, 45%)); }
   .projects__title {
     font: 800 28px "Nunito", sans-serif;
-    color: #f0f8ff; }
-  .projects__img {
+    color: #f0f8ff;
+    display: inline-block;
+    margin: 1rem 0;
     width: 100%;
-    height: fit;
-    position: relative; }
-    .projects__img img {
-      position: absolute;
-      right: 0;
-      top: 0;
-      max-width: 60%;
-      height: auto; }
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    text-transform: uppercase;
+    border-bottom: 0.05rem solid #5493b8;
+    text-align: right; }
+  .projects__each {
+    margin: 1.5rem 0 0 auto;
+    padding: 0.5rem;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto) minmax(20%, auto);
+    justify-items: end; }
+    .projects__each--img {
+      max-width: 70%;
+      height: auto;
+      padding: 0.5rem 0;
+      border-radius: 0;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; }
+    .projects__each img:hover {
+      -webkit-transform: translateY(-0.5rem);
+      transform: translateY(-0.5rem); }
+    .projects__each--subtitle {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      height: auto;
+      display: inline-block;
+      padding: 0.5rem 0; }
+      .projects__each--subtitle a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #f0f8ff;
+        font: 800 16px "Nunito", sans-serif; }
+    .projects__each--github {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      padding: 1rem 0; }
+      .projects__each--github a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #f0f8ff;
+        font: 800 16px "Nunito", sans-serif; }
+    .projects__each--text {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+      padding: 1rem 0;
+      text-align: right;
+      color: #f0f8ff;
+      font: 400 16px "Nunito", sans-serif; }
 
 /************************************************
 ************* Blog
 ***********************************************/
 .blog {
-  margin: 0 auto;
+  margin: -10rem auto;
   width: 100%;
   height: 100vh;
   background-color: #133d55;
   padding: 10rem 2rem 2rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   position: relative;
   z-index: 50;
   display: grid;
@@ -230,7 +293,17 @@ img {
   grid-template-rows: 3fr 1fr 4fr 1fr; }
   .blog__title1 {
     font: 800 28px "Nunito", sans-serif;
-    color: #f0f8ff; }
+    color: #f0f8ff;
+    display: inline-block;
+    margin: 1rem 0;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    text-transform: uppercase;
+    border-bottom: 0.05rem solid #5493b8;
+    text-align: left;
+    justify-self: start; }
 
 /************************************************
 ************* Footer
@@ -245,23 +318,29 @@ img {
 /************************************************
 ************* Learn more button
 ***********************************************/
-.btn--link {
-  display: inline-block;
+.btn {
   text-decoration: none;
   color: #fff;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
   text-align: center;
   vertical-align: middle;
   overflow: hidden;
-  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  background-image: linear-gradient(45deg, #133d55 0%, #32749a 45%, #133d55 100%);
+  -webkit-box-shadow: 1rem 1rem 1rem -0.3rem rgba(47, 47, 79, 0.55);
+  box-shadow: 1rem 1rem 1rem -0.3rem rgba(47, 47, 79, 0.55);
   -webkit-transition: 0.4s;
   transition: 0.4s; }
+  .btn a {
+    font: 800 16px "Nunito", sans-serif;
+    color: #f0f8ff;
+    text-shadow: 0.1rem 0.1rem #052334; }
 
-.btn--link:hover {
-  -webkit-transform: rotate(10deg);
-  transform: rotate(10deg); }
+.btn:hover,
+.tn:active {
+  -webkit-box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba(47, 47, 79, 0.55);
+  box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba(47, 47, 79, 0.55); }
 
 /*# sourceMappingURL=style.css.map */

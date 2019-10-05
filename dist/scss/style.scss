@@ -43,13 +43,23 @@ $font: "Nunito", sans-serif;
 ************* Mixins
 ***********************************************/
 @mixin clip-path-right {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
 
 @mixin clip-path-left {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+
+@mixin section-title {
+  font: 800 $font-size-m $font;
+  color: $color-white;
+  display: inline-block;
+  margin: 1rem 0;
+  width: 100%;
+  height: fit-content;
+  text-transform: uppercase;
 }
 
 @mixin subtitle-border-bottom-dark {
@@ -65,11 +75,11 @@ $font: "Nunito", sans-serif;
   grid-template-columns: 1fr;
 }
 
-// @mixin image-hover {
-//   -webkit-transform: translateY(1rem);
-//   -ms-transform: translateY(1rem);
-//   transform: translateY(1rem);
-// }
+@mixin image-hover {
+  -webkit-transform: translateY(-0.5rem);
+  -ms-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
 
 img {
   border-radius: 50%;
@@ -123,12 +133,12 @@ img {
     width: 95%;
     padding: 2rem;
     font: $font-size-sm $font;
-    color: pink; //  lighten($color-black, 60%);
+    color: lighten($color-black, 60%);
   }
 }
 
 .container {
-  margin: -6.5rem auto 0;
+  margin: -5.5rem auto 0;
   //padding: 1rem;
 }
 
@@ -136,9 +146,9 @@ img {
 ************* About
 ***********************************************/
 .about {
-  margin: 0 auto;
+  margin: -7rem auto 0;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-color: $color-light-teal;
   padding: 10rem 2rem 2rem;
   @include clip-path-left;
@@ -146,28 +156,18 @@ img {
   z-index: 80;
 
   @include section-grid-mobile;
-  grid-template-rows: 4fr 1fr 5fr;
-
-  // display: grid;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: 3fr 1fr 4fr;
+  grid-template-rows: minmax(25rem, 30%) 9% minmax(35%, 45%);
 
   // for screen larger than 480px
   // grid-template-columns: 60% 36%;
   // grid-template-rows: 1fr 4fr;
 
   &__title {
-    font: 800 $font-size-m $font;
-    color: $color-white;
-    display: inline-block;
-    width: 100%;
-    height: fit-content;
+    @include section-title;
+    @include subtitle-border-bottom-light;
 
-    margin: 1rem 0;
     text-align: right;
     justify-self: end;
-
-    @include subtitle-border-bottom-light;
 
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -175,7 +175,7 @@ img {
 
   &__img {
     width: 100%;
-    height: fit;
+    height: auto;
     position: relative;
 
     grid-column: 1 / 2;
@@ -185,19 +185,19 @@ img {
       position: absolute;
       right: 0;
       top: 0;
-      max-width: 60%;
+      min-width: 23rem;
+      max-width: 35%;
       height: auto;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     & img:hover {
-      -webkit-transform: translateY(1rem);
-      -ms-transform: translateY(1rem);
-      transform: translateY(1rem);
+      @include image-hover;
     }
   }
 
   &__text {
     width: 85%;
+    padding-top: 1.5rem;
     height: auto;
     font: 400 $font-size-sm $font;
     color: $color-white;
@@ -212,11 +212,10 @@ img {
 /************************************************
   ************* Skills
   ***********************************************/
-
 .skills {
-  margin: -9rem auto 0;
+  margin: -10rem auto 0;
   width: 100%;
-  height: 100vh;
+  height: 130vh;
   background-color: $color-light-blue;
   padding: 10rem 2rem 2rem;
   @include clip-path-right;
@@ -224,16 +223,10 @@ img {
   z-index: 70;
 
   @include section-grid-mobile;
-  grid-template-rows: 3fr 1fr 4fr 1fr;
+  grid-template-rows: minmax(25rem, 30%) 9% minmax(25%, 35%) 12%;
 
   &__title {
-    font: 800 $font-size-m $font;
-    color: $color-white;
-    display: inline-block;
-    width: 100%;
-    height: fit-content;
-    margin: 1rem 0;
-
+    @include section-title;
     @include subtitle-border-bottom-dark;
 
     grid-column: 1 / 2;
@@ -254,8 +247,13 @@ img {
       position: absolute;
       left: 0;
       top: 0;
-      max-width: 60%;
+      min-width: 23rem;
+      max-width: 35%;
       height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+    & img:hover {
+      @include image-hover;
     }
   }
 
@@ -265,15 +263,17 @@ img {
     grid-template-rows: 1fr 5fr;
 
     &--subtitle {
-      font: 800 $font-size-m $font;
+      display: inline-block;
+      font: 800 $font-size-sm $font;
+      height: auto;
     }
 
     &--content {
-      width: 80%;
-      border: 2px solid pink;
+      width: 90%;
       font: 400 $font-size-sm $font;
       &-1 {
         font: 400 $font-size-sm $font;
+        padding: 0.5rem;
       }
     }
   }
@@ -287,38 +287,91 @@ img {
 /************************************************
 ************* Projects
 ***********************************************/
-
 .projects {
-  margin: -11rem auto;
+  margin: -10rem auto;
   width: 100%;
-  height: 100vh;
+  max-height: 200vh;
   background-color: $color-light-teal;
   padding: 10rem 2rem 2rem;
   @include clip-path-left;
   position: relative;
   z-index: 60;
+
   &__title {
-    font: 800 $font-size-m $font;
-    color: $color-white;
+    @include section-title;
+    @include subtitle-border-bottom-light;
+
+    text-align: right;
+    //justify-self: end;
   }
 
   @include section-grid-mobile;
-  grid-template-rows: 3fr 1fr 4fr 1fr;
+  grid-template-rows: 9% repeat(2, minmax(auto, 45%));
 
-  &__img {
-    width: 100%;
-    height: fit;
-    position: relative;
+  &__each {
+    margin: 1.5rem 0 0 auto;
+    padding: 0.5rem;
+    width: 90%;
+    height: auto;
 
-    // grid-column: 1 / 2;
-    // grid-row: 1 / 2;
+    @include section-grid-mobile;
+    grid-template-rows: repeat(3, auto) minmax(20%, auto);
+    justify-items: end;
 
-    & img {
-      position: absolute;
-      right: 0;
-      top: 0;
-      max-width: 60%;
+    &--img {
+      max-width: 70%;
       height: auto;
+      padding: 0.5rem 0;
+
+      border-radius: 0;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    & img:hover {
+      @include image-hover;
+    }
+
+    &--subtitle {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      height: auto;
+      display: inline-block;
+      padding: 0.5rem 0;
+
+      & a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: $color-white;
+        font: 800 $font-size-sm $font;
+      }
+    }
+
+    &--github {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      padding: 1rem 0;
+
+      & a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: $color-white;
+        font: 800 $font-size-sm $font;
+      }
+    }
+
+    &--text {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+      padding: 1rem 0;
+
+      text-align: right;
+      color: $color-white;
+      font: 400 $font-size-sm $font;
     }
   }
 }
@@ -326,9 +379,8 @@ img {
 /************************************************
 ************* Blog
 ***********************************************/
-
 .blog {
-  margin: 0 auto;
+  margin: -10rem auto;
   width: 100%;
   height: 100vh;
   background-color: $color-teal-blue;
@@ -341,8 +393,11 @@ img {
   grid-template-rows: 3fr 1fr 4fr 1fr;
 
   &__title1 {
-    font: 800 $font-size-m $font;
-    color: $color-white;
+    @include section-title;
+    @include subtitle-border-bottom-light;
+
+    text-align: left;
+    justify-self: start;
   }
 
   // &__img {
@@ -374,46 +429,44 @@ img {
 /************************************************
 ************* Learn more button
 ***********************************************/
-// .btn {
-//   display: inline-block;
-//   text-transform: uppercase;
-//   color: $color-white;
-//   width: 16rem;
-//   height: 12rem;
-//   line-height: 12rem;
-//   border-radius: 50%;
-//   text-align: center;
-//   vertical-align: middle;
-//   overflow: hidden;
-//   background-image: linear-gradient(
-//     45deg,
-//     $color-teal-blue 0%,
-//     $color-light-blue 100%
-//   );
-
-//   &--link {
-//     width: 100%;
-//   }
-// }
-
-.btn--link {
-  display: inline-block;
+.btn {
   text-decoration: none;
   color: #fff;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
   text-align: center;
   vertical-align: middle;
   overflow: hidden;
-  background-image: -webkit-linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
-  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    $color-teal-blue 0%,
+    $color-light-teal 45%,
+    $color-teal-blue 100%
+  );
+  background-image: linear-gradient(
+    45deg,
+    $color-teal-blue 0%,
+    $color-light-teal 45%,
+    $color-teal-blue 100%
+  );
+
+  -webkit-box-shadow: 1rem 1rem 1rem -0.3rem rgba($color-black, 0.55);
+  -moz-box-shadow: 1rem 1rem 1rem -0.3rem rgba($color-black, 0.55);
+  box-shadow: 1rem 1rem 1rem -0.3rem rgba($color-black, 0.55);
+
   transition: 0.4s;
+  & a {
+    font: 800 $font-size-sm $font;
+    color: $color-white;
+    text-shadow: 0.1rem 0.1rem $color-deep-blue;
+  }
 }
 
-.btn--link:hover {
-  -webkit-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  transform: rotate(10deg);
+.btn:hover,
+.tn:active {
+  -webkit-box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba($color-black, 0.55);
+  -moz-box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba($color-black, 0.55);
+  box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba($color-black, 0.55);
 }
