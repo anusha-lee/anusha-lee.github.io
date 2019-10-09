@@ -10,6 +10,21 @@
   <body>
     <!-- reference website: https://html5up.net/uploads/demos/solid-state/ -->
     <header class="header">
+      <nav>
+        <div class="nav">
+          <input type="checkbox" class="nav__toggle" />
+          <span class="nav__line"></span>
+          <span class="nav__line"></span>
+          <span class="nav__line"></span>
+          <ul class="nav__list">
+            <li class="nav__list--item"><a href="#about">About</a></li>
+            <li class="nav__list--item"><a href="#skills">Skills</a></li>
+            <li class="nav__list--item"><a href="#proojects">Projects</a></li>
+            <li class="nav__list--item"><a href="#blog">Blog</a></li>
+            <li class="nav__list--item"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
       <div class="header__logo">
         <img src="img/icons/png/006-html-coding.png" alt="code logo" />
       </div>
@@ -18,7 +33,7 @@
     </header>
     <main class="container">
       <section class="about">
-        <h2 class="about__title">About me</h2>
+        <h2 class="about__title" id="about">About me</h2>
         <div class="about__img">
           <img src="img/profile.jpg" alt="profile" />
         </div>
@@ -30,7 +45,7 @@
           and English.
         </p>
       </section>
-      <section class="skills">
+      <section class="skills" id="skills">
         <h2 class="skills__title">Skills</h2>
         <div class="skills__img">
           <img src="img/img01.jpg" alt="sea view" />
@@ -60,7 +75,7 @@
           </a>
         </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="projects">
         <h2 class="projects__title">Projects</h2>
         <div class="projects__each">
           <img
@@ -97,7 +112,7 @@
           <p class="projects__each--text"></p>
         </div>
       </section>
-      <section class="blog">
+      <section class="blog" id="blog">
         <h2 class="blog__title1">Blog</h2>
         <!-- <h3 class="blog__title2">Latest blog posts</h3> -->
         <div class="blog__box">
@@ -109,7 +124,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <h2 class="footer__title">Let's get in touch!</h2>
       <span class="footer__line"></span>
       <div class="footer__social-media">
