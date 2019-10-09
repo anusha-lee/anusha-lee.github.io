@@ -100,9 +100,11 @@ img {
     height: auto;
     position: relative;
     grid-column: 1 / 2;
-    grid-row: 1 / 2; }
+    grid-row: 1 / 2;
+    justify-self: end; }
     .about__img img {
       position: absolute;
+      background-position: center;
       right: 0;
       top: 0;
       min-width: 23rem;
@@ -209,7 +211,9 @@ img {
   z-index: 60;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 9% repeat(2, minmax(auto, 45%)); }
+  grid-template-rows: 9% repeat(2, minmax(30%, 45%));
+  -ms-flex-line-pack: justify;
+      align-content: space-between; }
   .projects__title {
     font: 800 28px "Nunito", sans-serif;
     color: #f0f8ff;
@@ -226,15 +230,16 @@ img {
     margin: 1.5rem 0 0 auto;
     padding: 0.5rem;
     width: 90%;
-    height: auto;
+    min-height: 60vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto) minmax(20%, auto);
+    grid-template-rows: auto repeat(2, 8%) minmax(20%, auto);
     justify-items: end; }
     .projects__each--img {
       max-width: 70%;
       height: auto;
       padding: 0.5rem 0;
+      position: relative;
       border-radius: 0;
       -o-object-fit: cover;
          object-fit: cover;
@@ -279,7 +284,7 @@ img {
 ************* Blog
 ***********************************************/
 .blog {
-  margin: -10rem auto;
+  margin: -11rem auto;
   width: 100%;
   height: 100vh;
   background-color: #133d55;
