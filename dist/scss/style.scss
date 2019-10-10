@@ -150,27 +150,26 @@ img {
 ************* Hamburger menu
 ***********************************************/
 .nav {
-  //border: 2px solid sandybrown;
+  //border: 0 auto 2px solid sandybrown;
   margin: 0 auto;
   padding: 2rem;
   display: block;
   position: relative;
-  top: 5rem;
-  left: 1rem;
-  // width: 50%;
-  // height: auto;
+  top: 1rem;
+  left: 82%;
+
   z-index: 1;
 
   &__toggle {
     display: block;
-    width: 4rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
     position: absolute;
-    top: -7px;
-    right: -5px;
+    top: 1rem;
+    left: 1rem;
     cursor: pointer;
     opacity: 0;
-    z-index: 2;
+    z-index: 1;
   }
 
   &__line {
@@ -179,26 +178,26 @@ img {
     width: 3rem;
     height: 0.4rem;
     position: relative;
-
     background: $color-white;
-    border-radius: 3px;
+    border-radius: 120px;
+    cursor: pointer;
     z-index: 1;
     transform-origin: 4px 0;
-    transition: all 0.5s ease-in-out;
-
-    &:first-child {
-      transform-origin: 0% 0%;
-    }
-
-    &:nth-child(2) {
-      transform-origin: 0% 100%;
-    }
+    transition: all 0.3s ease-in-out;
   }
 
-  &__toggle:checked span {
+  &__line:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  &__line:nth-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  &__toggle:checked ~ &__line {
     opacity: 1;
-    transform: rotate(45deg) translateY(-2rem, -1rem);
-    background: yellowgreen;
+    transform: rotate(45deg) translate(-1px, -2px);
+    //background: purple;
   }
 
   &__toggle:checked ~ &__line:nth-last-child(3) {
@@ -207,31 +206,45 @@ img {
   }
 
   &__toggle:checked ~ &__line:nth-last-child(2) {
-    transform: rotate(-45deg) translateY(0, -0.1rem);
+    transform: rotate(-45deg) translate(-1px, -1px);
   }
 
   &__list {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: auto;
-    margin: -10rem 0 0 -5rem;
-    padding: 5rem;
-    padding-top: 12rem;
+    margin: 0 -20rem 0 0;
+    padding: 0;
+    padding-top: 0; //12rem;
+    background: $color-light-teal;
 
-    background: purple;
     transform-origin: 0% 0%;
-    transform: translateY(-100%, 0);
-    transition: all 0.5s ease-in-out;
+    transform: translate(100%, 5%);
+    transition: all 0.3s ease-in-out;
 
     &--item {
-      padding: 1rem 0;
-      color: $color-white;
-      font: 400 $font-size-sm $font;
+      width: 100%;
+      padding: 0;
+
+      & a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        padding: 1rem 1rem;
+        color: $color-white;
+        text-align: center;
+        font: 400 $font-size-sm $font;
+        transition: all 0.3s ease-in-out;
+      }
+
+      & a:hover {
+        background-color: $color-teal-blue;
+      }
     }
   }
 
-  nav__toggle:checked ~ ul {
-    transform: none;
+  &__toggle:checked ~ ul {
+    transform: translate(-120%, 5%);
   }
 }
 
@@ -276,6 +289,7 @@ img {
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
+      text-align: left;
     }
   }
 
@@ -321,6 +335,7 @@ img {
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
+      text-align: left;
     }
   }
 }
@@ -331,7 +346,7 @@ img {
 .skills {
   margin: -10rem auto 0;
   width: 100%;
-  height: 130vh;
+  height: 140vh;
   background-color: $color-light-blue;
   padding: 10rem 2rem 2rem;
   @include clip-path-right;
@@ -406,7 +421,7 @@ img {
     }
   }
 
-  &__learn-more {
+  &__btn {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
 
@@ -422,9 +437,9 @@ img {
 .projects {
   margin: -10rem auto;
   width: 100%;
-  max-height: 200vh;
+  max-height: 240vh;
   background-color: $color-light-teal;
-  padding: 10rem 2rem 2rem;
+  padding: 8rem 2rem 2rem;
   @include clip-path-left;
   position: relative;
   z-index: 60;
@@ -436,6 +451,8 @@ img {
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
+      padding-top: 3rem;
+      text-align: left;
     }
   }
 
@@ -446,16 +463,17 @@ img {
 
   &__each {
     margin: 1.5rem 0 0 auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0 1rem;
     width: 90%;
-    min-height: 60vh;
+    min-height: 90vh;
 
     @include section-grid-mobile;
-    grid-template-rows: auto repeat(2, 8%) minmax(20%, auto);
+    grid-template-rows: auto repeat(2, 8%) minmax(20%, 30%);
     justify-items: end;
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
+      justify-items: start;
     }
 
     &--img {
@@ -512,19 +530,30 @@ img {
       grid-column: 1 / 2;
       grid-row: 4 / 5;
       padding: 1rem 0;
+      height: fit-content;
 
       text-align: right;
       color: $color-white;
       font: 400 $font-size-sm $font;
+
+      @media only screen and (min-width: 560px) {
+        text-align: left;
+      }
     }
   }
+}
+
+.twHikes {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  @include subtitle-border-bottom-light;
 }
 
 /************************************************
 ************* Blog
 ***********************************************/
 .blog {
-  margin: -11rem auto;
+  margin: -15rem auto;
   width: 100%;
   height: 100vh;
   background-color: $color-teal-blue;
@@ -611,9 +640,9 @@ img {
     text-shadow: 0.1rem 0.1rem $color-deep-blue;
   }
 
-  @media only screen and (min-width: 560px) {
-    @include mid-width;
-  }
+  // @media only screen and (min-width: 560px) {
+  //
+  // }
 }
 
 .btn:hover,
