@@ -70,11 +70,6 @@ $font: "Nunito", sans-serif;
   border-bottom: 0.05rem solid $color-light-blue;
 }
 
-@mixin section-grid-mobile {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
 @mixin mid-width {
   margin: 0 auto;
   width: 75%;
@@ -83,6 +78,11 @@ $font: "Nunito", sans-serif;
 @mixin section-grid-desktop {
   grid-template-columns: 60% 36%;
   grid-template-rows: 1fr 4fr;
+}
+
+@mixin section-grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 @mixin image-hover {
@@ -101,7 +101,8 @@ img {
 ***********************************************/
 .header {
   width: 100%;
-  min-height: 70vh;
+  min-height: max-content;
+  padding: 1rem 0 10rem;
   background-image: linear-gradient(
       to left top,
       $color-deep-blue,
@@ -120,10 +121,13 @@ img {
     padding: 5rem 0 0;
     width: 90%;
     height: auto;
+    border-radius: 50%;
 
-    img {
+    & svg {
       width: 5rem;
       height: auto;
+      color: $color-white;
+      fill: currentColor;
     }
   }
 
@@ -263,9 +267,9 @@ img {
 .about {
   margin: -7rem auto 0;
   width: 100%;
-  height: 110vh;
+  min-height: max-content;
   background-color: $color-light-teal;
-  padding: 10rem 2rem 2rem;
+  padding: 10rem 2rem 10rem;
   @include clip-path-left;
   position: relative;
   z-index: 80;
@@ -346,9 +350,9 @@ img {
 .skills {
   margin: -10rem auto 0;
   width: 100%;
-  height: 140vh;
+  min-height: max-content;
   background-color: $color-light-blue;
-  padding: 10rem 2rem 2rem;
+  padding: 10rem 2rem 10rem;
   @include clip-path-right;
   position: relative;
   z-index: 70;
@@ -436,18 +440,23 @@ img {
 ***********************************************/
 .projects {
   margin: -10rem auto;
+  padding: 10rem 2rem 10rem;
   width: 100%;
-  max-height: 240vh;
+  min-height: max-content;
   background-color: $color-light-teal;
-  padding: 8rem 2rem 2rem;
   @include clip-path-left;
   position: relative;
   z-index: 60;
+
+  @include section-grid-mobile;
+  grid-auto-rows: auto minmax(max-content, 70%) 15%;
 
   &__title {
     @include section-title;
     @include subtitle-border-bottom-light;
     text-align: right;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
@@ -456,19 +465,16 @@ img {
     }
   }
 
-  @include section-grid-mobile;
-  grid-template-rows: 9% repeat(2, minmax(30%, 45%));
-  //grid-row-gap: 0.5rem;
-  align-content: space-between;
-
   &__each {
-    margin: 1.5rem 0 0 auto;
-    padding: 0.5rem 0 1rem;
+    margin: 1rem 0 1rem auto;
+    padding: 1rem 0.5rem;
     width: 90%;
-    min-height: 90vh;
+    min-height: max-content;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
 
     @include section-grid-mobile;
-    grid-template-rows: auto repeat(2, 8%) minmax(20%, 30%);
+    grid-template-rows: auto repeat(2, minmax(auto, 8%)) minmax(20%, 35%);
     justify-items: end;
 
     @media only screen and (min-width: 560px) {
@@ -515,14 +521,14 @@ img {
     &--github {
       grid-column: 1 / 2;
       grid-row: 3 / 4;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
 
       & a {
         display: inline-block;
         width: 100%;
         height: 100%;
         color: $color-white;
-        font: 800 $font-size-sm $font;
+        font: 400 $font-size-sm $font;
       }
     }
 
@@ -541,8 +547,50 @@ img {
       }
     }
   }
-}
 
+  &__other {
+    margin: 1rem 0 0 auto;
+    width: 90%;
+    padding: 0.5rem;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: right;
+
+    @media only screen and (min-width: 560px) {
+      @include mid-width;
+      justify-items: start;
+      text-align: left;
+    }
+
+    &--subtitle {
+      height: auto;
+      display: inline-block;
+      padding: 0.5rem 0;
+      font: 800 $font-size-sm $font;
+      color: $color-white;
+
+      & a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: $color-white;
+        font: 800 $font-size-sm $font;
+      }
+    }
+
+    &--github {
+      padding: 0.5rem 0;
+
+      & a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: $color-white;
+        font: 400 $font-size-sm $font;
+      }
+    }
+  }
+}
 .twHikes {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
@@ -555,15 +603,18 @@ img {
 .blog {
   margin: -15rem auto;
   width: 100%;
-  height: 100vh;
+  min-height: max-content;
   background-color: $color-teal-blue;
-  padding: 10rem 2rem 2rem;
+  padding: 15rem 2rem 10rem;
   @include clip-path-right;
   position: relative;
+  color: $color-white;
+  font: 400 $font-size-sm $font;
+
   z-index: 50;
 
   @include section-grid-mobile;
-  grid-template-rows: 3fr 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr 4fr 1fr;
 
   &__title1 {
     @include section-title;
@@ -593,16 +644,98 @@ img {
 ***********************************************/
 .footer {
   margin: -10rem 0;
+  padding: 17rem 2rem 5rem;
   width: 100%;
-  height: 40rem;
+  height: auto;
   background-image: linear-gradient(
       to left top,
       $color-deep-blue,
       rgba($color-teal-blue, 0.6)
     ),
     url(../img/background.jpg);
-}
 
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include section-title;
+    @include subtitle-border-bottom-light;
+    text-align: right;
+  }
+
+  &__social-media {
+    width: 30%;
+    height: 10rem;
+    margin: 1rem 0 1rem auto;
+    //@include subtitle-border-bottom-light;
+
+    &--box {
+      //border: 2px solid salmon;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-twitter,
+      &-github,
+      &-email {
+        & a {
+          display: inline-block;
+          width: 2rem;
+          height: auto;
+          transition: all 0.3s ease-in-out;
+          color: lighten($color-teal-blue, 40%);
+          fill: currentColor;
+        }
+
+        & a:hover,
+        & a:active {
+          color: $color-white;
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    padding: 1rem 0;
+    text-align: right;
+    color: lighten($color-teal-blue, 40%);
+    font-size: 1.2rem;
+    font-family: $font;
+  }
+
+  &__credits {
+    height: auto;
+    text-align: right;
+    color: lighten($color-teal-blue, 40%);
+    font-size: 1.2rem;
+    font-family: $font;
+
+    display: flex;
+    flex-direction: column;
+
+    & span {
+      margin: 0 0 0 auto;
+      width: 33.33%;
+      padding: 0.5rem 0;
+      color: lighten($color-teal-blue, 40%);
+
+      & a:link {
+        color: lighten($color-teal-blue, 40%);
+        transition: all 0.3s ease-in-out;
+      }
+
+      & a:hover,
+      & a:active {
+        color: $color-white;
+      }
+
+      & a:visited {
+        color: complement($color-light-blue);
+      }
+    }
+  }
+}
 /************************************************
 ************* Gallery button
 ***********************************************/
@@ -628,6 +761,8 @@ img {
     $color-light-teal 45%,
     $color-teal-blue 100%
   );
+  background-size: cover;
+  background-position: center;
 
   -webkit-box-shadow: 1rem 1rem 1rem -0.3rem rgba($color-black, 0.55);
   -moz-box-shadow: 1rem 1rem 1rem -0.3rem rgba($color-black, 0.55);
