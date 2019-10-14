@@ -307,7 +307,7 @@ img {
   margin: -10rem auto;
   padding: 10rem 2rem 10rem;
   width: 100%;
-  min-height: max-content;
+  min-height: auto;
   background-color: #32749a;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
@@ -338,12 +338,12 @@ img {
     margin: 1rem 0 1rem auto;
     padding: 1rem 0.5rem;
     width: 90%;
-    min-height: max-content;
+    height: max-content;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto repeat(2, minmax(auto, 8%)) minmax(20%, 35%);
+    grid-template-rows: minmax(max-content, 32%) repeat(2, minmax(max-content, 10%)) minmax(max-content, 35%);
     justify-items: end; }
     @media only screen and (min-width: 560px) {
       .projects__each {
@@ -353,7 +353,8 @@ img {
     .projects__each--img {
       max-width: 70%;
       height: auto;
-      padding: 0.5rem 0;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0 0;
       position: relative;
       border-radius: 0;
       object-fit: cover;
@@ -371,7 +372,7 @@ img {
     .projects__each--subtitle {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
-      height: auto;
+      height: min-content;
       display: inline-block;
       padding: 0.5rem 0; }
       .projects__each--subtitle a {
@@ -393,8 +394,8 @@ img {
     .projects__each--text {
       grid-column: 1 / 2;
       grid-row: 4 / 5;
-      padding: 1rem 0;
-      height: fit-content;
+      padding: 1rem 0 2rem;
+      height: min-content;
       text-align: right;
       color: #f0f8ff;
       font: 400 16px "Nunito", sans-serif; }
