@@ -165,7 +165,7 @@ img {
   grid-template-rows: minmax(25rem, 30%) 9% minmax(35%, 45%); }
   @media only screen and (min-width: 720px) {
     .about {
-      grid-template-columns: minmax(60%, 70%) minmax(25%, 30%);
+      grid-template-columns: minmax(55rem, 65%) minmax(25%, 30%);
       grid-template-rows: 1fr 4fr; } }
   .about__title {
     font: 800 28px "Nunito", sans-serif;
@@ -247,7 +247,7 @@ img {
       .about__text {
         margin: 0 auto;
         width: 75%;
-        text-align: left; } }
+        text-align: right; } }
     @media only screen and (min-width: 720px) {
       .about__text {
         margin: 0 auto;
@@ -275,8 +275,7 @@ img {
   grid-template-rows: minmax(25rem, 30%) 10% minmax(max-content, 38%) 20%; }
   @media only screen and (min-width: 720px) {
     .skills {
-      grid-template-columns: minmax(25%, 30%) minmax(60%, 70%);
-      grid-template-rows: 1fr 4fr;
+      grid-template-columns: minmax(25%, 30%) minmax(55rem, 65%);
       grid-template-rows: minmax(auto, 15%) minmax(max-content, 65%) minmax(max-content, 20%); } }
   .skills__title {
     font: 800 28px "Nunito", sans-serif;
@@ -300,13 +299,13 @@ img {
         margin: 0 auto;
         width: 80%;
         padding-top: 2rem;
-        margin-right: 1rem;
         text-align: left;
         grid-column: 2 / 3;
-        grid-row: 1 / 2; } }
+        grid-row: 1 / 2;
+        border: 2px solid peru; } }
   .skills__img {
     width: 100%;
-    height: fit-content;
+    height: auto;
     position: relative;
     grid-column: 1 / 2;
     grid-row: 1 / 2; }
@@ -319,18 +318,25 @@ img {
         margin: 0 auto;
         width: 80%;
         margin-right: 0.5rem;
-        max-width: 50%;
-        height: auto;
         grid-column: 1 / 2;
-        grid-row: 1 / 4; } }
+        grid-row: 1 / 4;
+        justify-self: end;
+        border: 2px solid pink; } }
+    @media only screen and (min-width: 960px) {
+      .skills__img {
+        width: 70%;
+        border: 2px solid orangered; } }
     .skills__img img {
       position: absolute;
       left: 0;
       top: 0;
       min-width: 23rem;
-      max-width: 35%;
+      max-width: 40%;
       height: auto;
       transition: all 0.3s ease-in-out; }
+      @media only screen and (min-width: 560px) {
+        .skills__img img {
+          left: 0; } }
       @media only screen and (min-width: 720px) {
         .skills__img img {
           margin-top: 2rem; } }
@@ -352,7 +358,7 @@ img {
       .skills__box {
         margin: 0 auto;
         width: 80%;
-        margin-right: 1rem;
+        margin-left: 1rem;
         text-align: left;
         grid-column: 2 / 3;
         grid-row: 2 / 3; } }
@@ -366,6 +372,9 @@ img {
       .skills__box--content-1 {
         font: 400 16px "Nunito", sans-serif;
         padding: 0.5rem; }
+      @media only screen and (min-width: 720px) {
+        .skills__box--content {
+          width: 100%; } }
   .skills__btn {
     grid-column: 1 / 2;
     grid-row: 4 / 5; }
@@ -375,9 +384,10 @@ img {
         width: 75%; } }
     @media only screen and (min-width: 720px) {
       .skills__btn {
+        margin: 0 auto;
+        width: 80%;
         grid-column: 2 / 3;
-        grid-row: 3 / 4;
-        justify-items: start; } }
+        grid-row: 3 / 4; } }
 
 /************************************************
 ************* Projects
