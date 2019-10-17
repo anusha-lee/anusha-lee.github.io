@@ -78,7 +78,6 @@ $font: "Nunito", sans-serif;
 @mixin large-width {
   margin: 0 auto;
   width: 80%;
-  border: 2px solid yellow;
 }
 
 @mixin section-grid-mobile {
@@ -157,10 +156,14 @@ img {
   }
   &__sub {
     margin: 1rem auto;
-    width: 95%;
+    width: 93%;
     padding: 2rem;
     font: $font-size-sm $font;
     color: lighten($color-black, 60%);
+
+    @media only screen and (min-width: 900px) {
+      width: 90%;
+    }
   }
 }
 
@@ -300,6 +303,10 @@ img {
     grid-template-rows: minmax(15%, 20%) minmax(60%, 76%);
   }
 
+  @media only screen and (min-width: 900px) {
+    padding: 25vh 0;
+  }
+
   &__title {
     @include section-title;
     @include subtitle-border-bottom-light;
@@ -322,6 +329,10 @@ img {
       text-align: right;
       grid-column: 1 / 2;
       grid-row: 1 / 2;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 90%;
     }
   }
 
@@ -348,6 +359,10 @@ img {
 
     @media only screen and (min-width: 960px) {
       width: 70%;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 32%;
     }
   }
 
@@ -425,19 +440,19 @@ img {
         20%
       );
   }
-
-  // @media only screen and (min-width: 960px) {
-  //   border: 2px dashed yellow;
-  // }
+  @media only screen and (min-width: 900px) {
+    padding: 25vh 0;
+  }
 
   &__title {
     @include section-title;
     @include subtitle-border-bottom-dark;
 
+    text-align: left;
+    justify-self: start;
+
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    text-align: left;
-    // justify-self: start;
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
@@ -445,11 +460,14 @@ img {
 
     @media only screen and (min-width: 720px) {
       @include large-width;
-      margin-right: 0;
+      margin-left: 0;
       padding-top: 2rem;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
-      justify-self: start;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 90%;
     }
   }
 
@@ -460,22 +478,20 @@ img {
 
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    justify-self: start;
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
     }
 
     @media only screen and (min-width: 720px) {
-      @include large-width;
       grid-column: 1 / 2;
       grid-row: 1 / 4;
-      //justify-self: end;
     }
 
-    // @media only screen and (min-width: 960px) {
-    //   width: 70%;
-    //   border: 2px solid orangered;
-    // }
+    @media only screen and (min-width: 900px) {
+      width: 30%;
+    }
 
     & img {
       position: absolute;
@@ -510,13 +526,13 @@ img {
       @include mid-width;
     }
 
-    // @media only screen and (min-width: 720px) {
-    //   @include large-width;
-    //   margin-left: 1rem;
-    //   text-align: left;
-    //   grid-column: 2 / 3;
-    //   grid-row: 2 / 3;
-    // }
+    @media only screen and (min-width: 720px) {
+      @include large-width;
+      margin-left: 0;
+      text-align: left;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
 
     &--subtitle {
       display: inline-block;
@@ -570,6 +586,10 @@ img {
 
   @include section-grid-mobile;
   grid-auto-rows: auto minmax(max-content, 70%) 15%;
+
+  @media only screen and (min-width: 900px) {
+    padding: 20vh 0;
+  }
 
   &__title {
     @include section-title;
