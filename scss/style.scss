@@ -125,6 +125,7 @@ img {
 
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
   position: relative;
   z-index: 99;
   @include clip-path-right;
@@ -171,7 +172,6 @@ img {
 ************* Hamburger menu
 ***********************************************/
 .nav {
-  //border: 0 auto 2px solid sandybrown;
   margin: 0 auto;
   padding: 2rem;
   display: block;
@@ -796,6 +796,7 @@ img {
       rgba($color-teal-blue, 0.6)
     ),
     url(../img/background.jpg);
+  background-attachment: fixed;
 
   display: flex;
   flex-direction: column;

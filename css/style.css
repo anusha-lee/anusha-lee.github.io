@@ -35,6 +35,7 @@ img {
   background-image: linear-gradient(to left top, #052334, rgba(19, 61, 85, 0.6)), url(../img/background.jpg);
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
   position: relative;
   z-index: 99;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -581,6 +582,7 @@ img {
   width: 100%;
   height: auto;
   background-image: linear-gradient(to left top, #052334, rgba(19, 61, 85, 0.6)), url(../img/background.jpg);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column; }
   .footer__title {
