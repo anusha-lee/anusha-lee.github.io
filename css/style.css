@@ -73,6 +73,13 @@ img {
 /************************************************
 ************* Hamburger menu
 ***********************************************/
+nav {
+  position: fixed;
+  width: 30%;
+  top: 0;
+  right: 0;
+  z-index: 999; }
+
 .nav {
   margin: 0 1.5rem 0 auto;
   width: 7rem;
@@ -616,7 +623,7 @@ img {
     border-bottom: 0.05rem solid #5493b8;
     text-align: right; }
   .footer__social-media {
-    width: 30%;
+    width: 15rem;
     height: 10rem;
     margin: 1rem 0 1rem auto; }
     .footer__social-media--box {
