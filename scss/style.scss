@@ -181,10 +181,15 @@ nav {
   width: 7rem;
   padding: 2rem;
   display: block;
-  position: relative;
-  top: 1rem;
+  //position: relative;
+  //top: 1rem;
+  //right: 0;
+
+  position: fixed;
   right: 0;
-  z-index: 1;
+  left: auto;
+
+  z-index: 999;
 
   @media only screen and (min-width: 720px) {
     right: 3%;
