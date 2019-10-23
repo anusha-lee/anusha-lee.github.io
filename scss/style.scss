@@ -110,7 +110,8 @@ img {
 .header {
   width: 100%;
   min-height: max-content;
-  padding: 1rem 0 10rem;
+  margin-top: -10rem;
+  padding: 7rem 0 10rem;
   background-image: linear-gradient(
       to left top,
       $color-deep-blue,
@@ -124,8 +125,7 @@ img {
   background-repeat: no-repeat;
   position: relative;
   z-index: 99;
-  //@include clip-path-right;
-  transform: skewY(-10deg);
+  @include clip-path-right;
 
   &__logo {
     margin: 10rem auto 0;
@@ -133,7 +133,6 @@ img {
     width: 90%;
     height: auto;
     border-radius: 50%;
-    transform: skewY(10deg);
 
     & svg {
       width: 5rem;
@@ -150,7 +149,6 @@ img {
     font: 900 $font-size-bg $font;
     text-transform: uppercase;
     padding: 1rem 1rem 0;
-    transform: skewY(10deg);
 
     @include subtitle-border-bottom-light;
   }
@@ -160,7 +158,6 @@ img {
     padding: 2rem;
     font: $font-size-sm $font;
     color: lighten($color-black, 60%);
-    transform: skewY(10deg);
 
     @media only screen and (min-width: 900px) {
       width: 90%;
@@ -175,14 +172,12 @@ img {
 nav {
   position: fixed;
   width: 30%;
-  top: 0;
+  top: 1rem;
   right: 0;
-  z-index: 999;
-  transform: skewY(10deg);
 }
 
 .nav {
-  margin: 0 1.5rem 0 auto;
+  margin: 1rem 1.5rem 0 auto;
   width: 7rem;
   padding: 2rem;
   display: block;
@@ -259,7 +254,6 @@ nav {
     background: $color-light-teal;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    z-index: 1800;
 
     @media only screen and (min-width: 720px) {
       width: 35vw;
@@ -286,7 +280,7 @@ nav {
   }
 
   &__toggle:checked ~ ul {
-    top: -2rem;
+    top: -3rem;
     right: -6vw;
     opacity: 1;
 
@@ -302,7 +296,7 @@ nav {
 
 .container {
   margin: -5.5rem auto 0;
-  //padding: 1rem;
+  z-index: -1;
 }
 
 /************************************************
@@ -313,10 +307,8 @@ nav {
   width: 100%;
   min-height: max-content;
   background-color: $color-light-teal;
-  padding: 10rem 2rem 10rem;
-  @include clip-path-left;
+  padding: 15rem 2rem 10rem;
   position: relative;
-  z-index: 80;
 
   @include section-grid-mobile;
   grid-template-rows: minmax(23rem, auto) auto minmax(35%, 45%);
@@ -374,8 +366,6 @@ nav {
     }
 
     @media only screen and (min-width: 720px) {
-      //@include large-width;
-      //margin-left: 2rem;
       padding: 5rem 0;
       grid-column: 2 / 3;
       grid-row: 1 / 3;
@@ -393,7 +383,6 @@ nav {
     top: 0;
     min-width: 20rem;
     max-width: 40%;
-    //height: auto;
     transition: all 0.3s ease-in-out;
 
     @media only screen and (min-width: 560px) {
@@ -411,6 +400,7 @@ nav {
   &__text {
     width: 85%;
     padding-top: 1.5rem;
+    padding-bottom: 10rem;
     height: auto;
     font: 400 $font-size-sm $font;
     color: $color-white;
@@ -429,13 +419,13 @@ nav {
       @include large-width;
       margin-right: 1rem;
       text-align: right;
-      padding: 1rem 0.5rem;
       grid-column: 1 / 2;
       grid-row: 2 / 3;
     }
 
     @media only screen and (min-width: 900px) {
       width: 60%;
+      padding-bottom: 5rem;
     }
   }
 }
@@ -448,29 +438,26 @@ nav {
   width: 100%;
   min-height: max-content;
   background-color: $color-light-blue;
-  padding: 10rem 2rem 10rem;
-  @include clip-path-right;
+  padding: 10rem 2rem 20rem;
+  transform: skewY(7deg);
   position: relative;
-  z-index: 70;
 
   @include section-grid-mobile;
-  grid-template-rows: minmax(25rem, 30%) auto minmax(max-content, 38%) 20%;
+  grid-template-rows: minmax(25rem, 30%) auto minmax(max-content, 50%);
   grid-gap: 1rem;
 
   @media only screen and (min-width: 720px) {
     @include section-grid-desktop-left;
-    grid-template-rows: minmax(auto, 15%) minmax(max-content, 65%) minmax(
-        max-content,
-        20%
-      );
+    grid-template-rows: minmax(auto, 15%) minmax(max-content, 75%);
   }
   @media only screen and (min-width: 900px) {
-    padding: 25vh 0;
+    padding: 25vh 0 50vh;
   }
 
   &__title {
     @include section-title;
     @include subtitle-border-bottom-dark;
+    transform: skewY(-7deg);
 
     text-align: left;
     justify-self: start;
@@ -499,6 +486,7 @@ nav {
     width: 100%;
     height: auto;
     position: relative;
+    transform: skewY(-7deg);
 
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -546,6 +534,7 @@ nav {
     color: $color-white;
     @include section-grid-mobile;
     grid-template-rows: minmax(max-content, 20%) minmax(max-content, 75%);
+    transform: skewY(-7deg);
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
@@ -590,12 +579,6 @@ nav {
       @media only screen and (min-width: 560px) {
         @include mid-width;
       }
-
-      // @media only screen and (min-width: 720px) {
-      //   @include large-width;
-      //   grid-column: 2 / 3;
-      //   grid-row: 3 / 4;
-      // }
     }
   }
 }
@@ -604,20 +587,19 @@ nav {
 ************* Projects
 ***********************************************/
 .projects {
-  margin: -10rem auto;
+  margin: -12rem auto 0;
   padding: 10rem 2rem 10rem;
   width: 100%;
   min-height: auto; //max-content;
   background-color: $color-light-teal;
-  @include clip-path-left;
   position: relative;
-  z-index: 60;
+  transform: skewY(-7deg);
 
   @include section-grid-mobile;
   grid-auto-rows: auto minmax(max-content, 70%) 15%;
 
   @media only screen and (min-width: 900px) {
-    padding: 20vh 0;
+    margin-top: -20rem;
   }
 
   &__title {
@@ -626,6 +608,7 @@ nav {
     text-align: right;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    transform: skewY(7deg);
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
@@ -728,6 +711,7 @@ nav {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
     text-align: right;
+    transform: skewY(7deg);
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
@@ -756,6 +740,7 @@ nav {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   @include subtitle-border-bottom-light;
+  transform: skewY(7deg);
 }
 
 /************************************************
@@ -914,6 +899,7 @@ nav {
   text-align: center;
   vertical-align: middle;
   overflow: hidden;
+  transform: skewY(7deg);
   background-image: -webkit-linear-gradient(
     45deg,
     $color-teal-blue 0%,
