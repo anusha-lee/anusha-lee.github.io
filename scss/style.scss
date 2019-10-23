@@ -124,14 +124,16 @@ img {
   background-repeat: no-repeat;
   position: relative;
   z-index: 99;
-  @include clip-path-right;
+  //@include clip-path-right;
+  transform: skewY(-10deg);
 
   &__logo {
-    margin: 0 auto;
+    margin: 10rem auto 0;
     padding: 5rem 0 0;
     width: 90%;
     height: auto;
     border-radius: 50%;
+    transform: skewY(10deg);
 
     & svg {
       width: 5rem;
@@ -148,6 +150,7 @@ img {
     font: 900 $font-size-bg $font;
     text-transform: uppercase;
     padding: 1rem 1rem 0;
+    transform: skewY(10deg);
 
     @include subtitle-border-bottom-light;
   }
@@ -157,6 +160,7 @@ img {
     padding: 2rem;
     font: $font-size-sm $font;
     color: lighten($color-black, 60%);
+    transform: skewY(10deg);
 
     @media only screen and (min-width: 900px) {
       width: 90%;
@@ -174,6 +178,7 @@ nav {
   top: 0;
   right: 0;
   z-index: 999;
+  transform: skewY(10deg);
 }
 
 .nav {
@@ -181,15 +186,12 @@ nav {
   width: 7rem;
   padding: 2rem;
   display: block;
-  //position: relative;
-  //top: 1rem;
-  //right: 0;
 
   position: fixed;
   right: 0;
   left: auto;
 
-  z-index: 999;
+  z-index: 1999;
 
   @media only screen and (min-width: 720px) {
     right: 3%;
@@ -257,6 +259,7 @@ nav {
     background: $color-light-teal;
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    z-index: 1800;
 
     @media only screen and (min-width: 720px) {
       width: 35vw;
