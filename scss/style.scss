@@ -707,7 +707,8 @@ nav {
   &__other {
     margin: 1rem 0 0 auto;
     width: 90%;
-    padding: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 8rem;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
     text-align: right;
@@ -715,6 +716,7 @@ nav {
 
     @media only screen and (min-width: 560px) {
       @include mid-width;
+
       justify-items: start;
       text-align: left;
     }
@@ -790,7 +792,7 @@ nav {
 ***********************************************/
 .footer {
   margin: -12rem 0;
-  padding: 17rem 2rem 5rem;
+  padding: 10rem 2rem 5rem;
   width: 100%;
   height: auto;
   background-image: linear-gradient(
@@ -806,6 +808,9 @@ nav {
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
 
   &__title {
     @include section-title;
