@@ -39,7 +39,9 @@ img {
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 2999;
+  top: 0;
+  left: 0;
+  z-index: 20;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
   .header__logo {
@@ -79,7 +81,7 @@ nav {
   width: 30%;
   top: 3rem;
   right: 0;
-  z-index: 1999; }
+  z-index: 2000; }
 
 .nav {
   margin: 1rem 1.5rem 0 auto;
@@ -89,7 +91,7 @@ nav {
   position: fixed;
   right: 0;
   left: auto;
-  z-index: 1980; }
+  z-index: 1900; }
   @media only screen and (min-width: 720px) {
     .nav {
       right: 3%; } }
@@ -170,7 +172,9 @@ nav {
 ***********************************************/
 .container {
   margin: -5.5rem auto 0;
-  z-index: 0; }
+  position: relative;
+  top: 1rem;
+  z-index: 2; }
 
 /************************************************
 ************* About
@@ -608,7 +612,7 @@ nav {
 ***********************************************/
 .footer {
   margin: -12rem 0;
-  padding: 10rem 2rem 5rem;
+  padding: 22rem 2rem 5rem;
   width: 100%;
   height: auto;
   background-image: linear-gradient(to left top, #052334, rgba(19, 61, 85, 0.6)), url(../img/background.jpg);

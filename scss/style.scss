@@ -124,7 +124,9 @@ img {
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 2999;
+  top: 0;
+  left: 0;
+  z-index: 20;
   @include clip-path-right;
 
   &__logo {
@@ -174,7 +176,7 @@ nav {
   width: 30%;
   top: 3rem;
   right: 0;
-  z-index: 1999;
+  z-index: 2000;
 }
 
 .nav {
@@ -187,7 +189,7 @@ nav {
   right: 0;
   left: auto;
 
-  z-index: 1980;
+  z-index: 1900;
 
   @media only screen and (min-width: 720px) {
     right: 3%;
@@ -297,7 +299,9 @@ nav {
 
 .container {
   margin: -5.5rem auto 0;
-  z-index: 0;
+  position: relative;
+  top: 1rem;
+  z-index: 2;
 }
 
 /************************************************
@@ -792,7 +796,7 @@ nav {
 ***********************************************/
 .footer {
   margin: -12rem 0;
-  padding: 10rem 2rem 5rem;
+  padding: 22rem 2rem 5rem;
   width: 100%;
   height: auto;
   background-image: linear-gradient(
