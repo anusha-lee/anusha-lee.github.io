@@ -188,7 +188,7 @@ nav {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(23rem, auto) auto minmax(35%, 45%);
+  grid-template-rows: minmax(23rem, auto) min-content minmax(35%, 45%);
   grid-gap: 1rem; }
   @media only screen and (min-width: 720px) {
     .about {
