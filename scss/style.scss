@@ -316,7 +316,7 @@ nav {
   position: relative;
 
   @include section-grid-mobile;
-  grid-template-rows: minmax(23rem, auto) min-content minmax(35%, 45%);
+  grid-template-rows: minmax(23rem, max-content) min-content minmax(35%, 45%);
   grid-gap: 1rem;
 
   @media only screen and (min-width: 720px) {
@@ -359,7 +359,7 @@ nav {
 
   &__img {
     width: 100%;
-    height: auto;
+    height: min-auto;
     position: relative;
 
     grid-column: 1 / 2;
