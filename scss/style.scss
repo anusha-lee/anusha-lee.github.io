@@ -312,7 +312,7 @@ nav {
   width: 100%;
   min-height: max-content;
   background-color: $color-light-teal;
-  padding: 15rem 2rem 10rem;
+  padding: 15rem 2rem 8rem;
   position: relative;
 
   @include section-grid-mobile;
@@ -322,10 +322,11 @@ nav {
   @media only screen and (min-width: 720px) {
     @include section-grid-desktop-right;
     grid-template-rows: minmax(15%, 20%) minmax(60%, 76%);
+    padding-bottom: 6rem;
   }
 
   @media only screen and (min-width: 900px) {
-    padding: 25vh 0;
+    padding: 20rem 0 18rem;
   }
 
   &__title {
@@ -439,7 +440,7 @@ nav {
   ************* Skills
   ***********************************************/
 .skills {
-  margin: -10rem auto 0;
+  margin: -8rem auto 0;
   width: 100%;
   min-height: max-content;
   background-color: $color-light-blue;
@@ -456,7 +457,11 @@ nav {
     grid-template-rows: minmax(auto, 15%) minmax(max-content, 75%);
   }
   @media only screen and (min-width: 900px) {
-    padding: 25vh 0 50vh;
+    padding: 12rem 0 20rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding-bottom: 22rem;
   }
 
   &__title {
@@ -588,18 +593,26 @@ nav {
 ***********************************************/
 .projects {
   margin: -12rem auto 0;
-  padding: 10rem 2rem 10rem;
+  padding: 10rem 2rem 9rem;
   width: 100%;
   min-height: auto; //max-content;
   background-color: $color-light-teal;
-  position: relative;
+  //position: relative;
   transform: skewY(-5deg);
 
   @include section-grid-mobile;
   grid-auto-rows: auto minmax(max-content, 70%) 15%;
 
+  @media only screen and (min-width: 720px) {
+    padding-bottom: 15rem;
+  }
   @media only screen and (min-width: 900px) {
-    margin-top: -20rem;
+    padding-bottom: 18rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    margin-top: -15rem;
+    padding-bottom: 22rem;
   }
 
   &__title {
@@ -708,7 +721,7 @@ nav {
     margin: 1rem 0 0 auto;
     width: 90%;
     padding-top: 0.5rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
     text-align: right;
@@ -722,7 +735,7 @@ nav {
     }
 
     @media only screen and (min-width: 900px) {
-      padding-bottom: 15rem;
+      padding-bottom: 3rem;
     }
 
     &--subtitle {
@@ -751,46 +764,110 @@ nav {
 
 /************************************************
 ************* Blog
-
+***********************************************/
 .blog {
-  margin: -15rem auto;
+  margin: -5rem auto;
   width: 100%;
   min-height: max-content;
+
   background-color: $color-teal-blue;
-  padding: 15rem 2rem 10rem;
-  @include clip-path-right;
-  position: relative;
+  padding: 8rem 2rem 17rem;
   color: $color-white;
   font: 400 $font-size-sm $font;
-
-  z-index: 50;
+  transform: skewY(5deg);
 
   @include section-grid-mobile;
-  grid-template-rows: 1fr 1fr 4fr 1fr;
+  grid-template-rows: minmax(25rem, 30%) auto auto minmax(max-content, 30%);
+  grid-gap: 1rem;
+
+  @media only screen and (min-width: 560px) {
+    margin-top: -6rem;
+  }
+
+  @media only screen and (min-width: 720px) {
+    margin-top: -9rem;
+  }
+
+  @media only screen and (min-width: 900px) {
+    margin-top: -11rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    margin-top: -15rem;
+  }
 
   &__title1 {
     @include section-title;
     @include subtitle-border-bottom-light;
+    transform: skewY(-5deg);
 
     text-align: left;
     justify-self: start;
 
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
     @media only screen and (min-width: 560px) {
       @include mid-width;
     }
+
+    @media only screen and (min-width: 720px) {
+      //margin-top: -8rem;
+    }
+
+    @media only screen and (min-width: 900px) {
+      // margin-top: -11rem;
+    }
+  }
+  &__title2 {
+    transform: skewY(-5deg);
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    height: min-content;
+    display: inline-block;
+    padding: 0.5rem 0;
+
+    & a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: $color-white;
+      font: 800 $font-size-sm $font;
+    }
   }
 
-  // &__img {
-  //   position: relative;
-  //   & img {
-  //     position: absolute;
-  //     right: 0;
-  //     top: 2rem;
-  //     width: 80%;
-  //   }
-  // }
+  &__box {
+    transform: skewY(-5deg);
+    padding: 1rem 0 1.5rem;
+
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: skewY(-5deg);
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    & img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      min-width: 20rem;
+      max-width: 40%;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  & img:hover {
+    @include image-hover;
+  }
 }
-***********************************************/
+
 /************************************************
 ************* Footer
 ***********************************************/
@@ -813,8 +890,10 @@ nav {
   display: flex;
   flex-direction: column;
 
-  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  position: relative;
+  z-index: 50;
 
   @media only screen and (min-width: 900px) {
     margin-top: -15rem;
