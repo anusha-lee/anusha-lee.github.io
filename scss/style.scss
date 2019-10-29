@@ -356,6 +356,10 @@ nav {
     @media only screen and (min-width: 900px) {
       width: 80%;
     }
+
+    @media only screen and (min-width: 1200px) {
+      width: 65%;
+    }
   }
 
   &__img {
@@ -378,7 +382,11 @@ nav {
     }
 
     @media only screen and (min-width: 900px) {
-      width: 20%;
+      width: 50%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 5%;
     }
   }
 
@@ -491,6 +499,10 @@ nav {
       width: 80%;
       margin-left: 1.5rem;
     }
+
+    @media only screen and (min-width: 1200px) {
+      width: 65%;
+    }
   }
 
   &__img {
@@ -517,6 +529,10 @@ nav {
       margin: 0 auto;
       width: 50%;
       justify-self: end;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 5%;
     }
 
     @media only screen and (min-width: 900px) {
@@ -634,6 +650,10 @@ nav {
       padding-top: 3rem;
       text-align: left;
     }
+
+    @media only screen and (min-width: 1200px) {
+      width: 55%;
+    }
   }
 
   &__each {
@@ -653,6 +673,10 @@ nav {
     @media only screen and (min-width: 560px) {
       @include mid-width;
       justify-items: start;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 55%;
     }
 
     &--img {
@@ -743,6 +767,9 @@ nav {
     @media only screen and (min-width: 900px) {
       padding-bottom: 3rem;
     }
+    @media only screen and (min-width: 1200px) {
+      width: 55%;
+    }
 
     &--subtitle {
       height: auto;
@@ -801,12 +828,11 @@ nav {
 
   @media only screen and (min-width: 900px) {
     margin-top: -11rem;
-    min-height: 70vh;
+    grid-template-rows: minmax(min-content, max-content) minmax(25vh, 50vh);
   }
 
   @media only screen and (min-width: 1200px) {
     margin-top: -15rem;
-    min-height: 80vh;
   }
 
   &__title1 {
@@ -833,6 +859,10 @@ nav {
       width: 90%;
       margin: 0 auto auto 1.5rem;
     }
+
+    @media only screen and (min-width: 1200px) {
+      width: 67%;
+    }
   }
   &__title2 {
     transform: skewY(-5deg);
@@ -853,6 +883,10 @@ nav {
 
     @media only screen and (min-width: 900px) {
       @include large-width;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 65%;
     }
 
     & a {
@@ -883,6 +917,10 @@ nav {
     @media only screen and (min-width: 900px) {
       margin: 0 auto auto 1.5rem;
     }
+
+    @media only screen and (min-width: 1200px) {
+      width: 65%;
+    }
   }
 
   &__img {
@@ -909,8 +947,8 @@ nav {
       justify-self: end;
     }
 
-    @media only screen and (min-width: 900px) {
-      //width: 5%;
+    @media only screen and (min-width: 1200px) {
+      width: 5%;
     }
 
     & img {
