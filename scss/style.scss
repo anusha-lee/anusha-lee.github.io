@@ -481,7 +481,7 @@ nav {
 
     @media only screen and (min-width: 720px) {
       @include large-width;
-      margin-left: 0;
+      margin-left: 1rem;
       padding-top: 2rem;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -489,6 +489,7 @@ nav {
 
     @media only screen and (min-width: 900px) {
       width: 80%;
+      margin-left: 1.5rem;
     }
   }
 
@@ -503,7 +504,8 @@ nav {
     justify-self: start;
 
     @media only screen and (min-width: 560px) {
-      @include mid-width;
+      width: 75%;
+      margin: 0 0 auto auto;
     }
 
     @media only screen and (min-width: 720px) {
@@ -512,8 +514,13 @@ nav {
     }
 
     @media only screen and (min-width: 900px) {
-      width: 20%;
+      margin: 0 auto;
+      width: 50%;
       justify-self: end;
+    }
+
+    @media only screen and (min-width: 900px) {
+      // width: 5%;
     }
 
     & img {
@@ -552,7 +559,7 @@ nav {
 
     @media only screen and (min-width: 720px) {
       @include large-width;
-      margin-left: 0;
+      margin-left: 1.5rem;
       text-align: left;
       grid-column: 2 / 3;
       grid-row: 2 / 3;
@@ -593,11 +600,10 @@ nav {
 ***********************************************/
 .projects {
   margin: -12rem auto 0;
-  padding: 10rem 2rem 9rem;
+  padding: 10rem 2rem 9.5rem;
   width: 100%;
-  min-height: auto; //max-content;
+  min-height: auto;
   background-color: $color-light-teal;
-  //position: relative;
   transform: skewY(-5deg);
 
   @include section-grid-mobile;
@@ -777,23 +783,30 @@ nav {
   transform: skewY(5deg);
 
   @include section-grid-mobile;
-  grid-template-rows: minmax(25rem, 30%) auto auto minmax(max-content, 30%);
-  grid-gap: 1rem;
+  grid-template-rows: minmax(25rem, 30%) auto minmax(max-content, 50%);
 
   @media only screen and (min-width: 560px) {
-    margin-top: -6rem;
+    margin-top: -6.5rem;
   }
 
   @media only screen and (min-width: 720px) {
     margin-top: -9rem;
+    min-height: 50rem;
+    @include section-grid-desktop-left;
+    grid-template-rows: minmax(min-content, max-content) minmax(
+        max-content,
+        75%
+      );
   }
 
   @media only screen and (min-width: 900px) {
     margin-top: -11rem;
+    min-height: 70vh;
   }
 
   @media only screen and (min-width: 1200px) {
     margin-top: -15rem;
+    min-height: 80vh;
   }
 
   &__title1 {
@@ -812,11 +825,13 @@ nav {
     }
 
     @media only screen and (min-width: 720px) {
-      //margin-top: -8rem;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
     }
 
     @media only screen and (min-width: 900px) {
-      // margin-top: -11rem;
+      width: 90%;
+      margin: 0 auto auto 1.5rem;
     }
   }
   &__title2 {
@@ -826,6 +841,19 @@ nav {
     height: min-content;
     display: inline-block;
     padding: 0.5rem 0;
+
+    @media only screen and (min-width: 560px) {
+      @include mid-width;
+    }
+
+    @media only screen and (min-width: 720px) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    @media only screen and (min-width: 900px) {
+      @include large-width;
+    }
 
     & a {
       display: inline-block;
@@ -842,6 +870,19 @@ nav {
 
     grid-column: 1 / 2;
     grid-row: 4 / 5;
+
+    @media only screen and (min-width: 560px) {
+      @include mid-width;
+    }
+
+    @media only screen and (min-width: 720px) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    @media only screen and (min-width: 900px) {
+      margin: 0 auto auto 1.5rem;
+    }
   }
 
   &__img {
@@ -853,14 +894,34 @@ nav {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 
+    @media only screen and (min-width: 560px) {
+      width: 75%;
+      margin: 0 0 auto auto;
+    }
+
+    @media only screen and (min-width: 720px) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+    @media only screen and (min-width: 900px) {
+      margin: 0 auto;
+      width: 50%;
+      justify-self: end;
+    }
+
+    @media only screen and (min-width: 900px) {
+      //width: 5%;
+    }
+
     & img {
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       min-width: 20rem;
       max-width: 40%;
       height: auto;
       transition: all 0.3s ease-in-out;
+      box-shadow: 2px 5px 5px $color-light-blue;
     }
   }
   & img:hover {
@@ -873,7 +934,7 @@ nav {
 ***********************************************/
 .footer {
   margin: -12rem 0;
-  padding: 22rem 2rem 5rem;
+  padding: 11rem 2rem 5rem;
   width: 100%;
   height: auto;
   background-image: linear-gradient(
@@ -884,7 +945,7 @@ nav {
     url(../img/background.jpg);
 
   background-size: cover;
-  background-position: 50% 10%;
+  background-position: 45% 0%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   display: flex;
