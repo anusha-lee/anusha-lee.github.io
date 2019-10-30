@@ -1080,21 +1080,31 @@ a {
 .link {
   display: inline-block;
   color: $color-white;
-  //overflow: hidden;
-  transition: width 0.3 ease-in-out;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 
-  &::before {
+  &::after {
     content: "";
-    left: 0;
+    display: inline-block;
+    position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
-    height: 0.2rem;
-    transform: translateX(50%);
-    background: pink;
-
-    &:hover::before {
-      transform: translateX(0);
-    }
+    height: 0.3rem;
+    padding: 0.2rem 1rem;
+    transform: translateX(-100%);
+    background: complement($color-light-blue);
+    opacity: 0.9;
+    z-index: -1;
+  }
+  &:hover {
+    transform: translateX(0);
+  }
+  &:hover::after {
+    transform: translateX(0%);
+    transition: all 0.3s ease-in-out;
   }
 }
 

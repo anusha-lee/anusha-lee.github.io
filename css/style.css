@@ -823,17 +823,28 @@ a {
 .link {
   display: inline-block;
   color: #f0f8ff;
-  transition: width 0.3 ease-in-out; }
-  .link::before {
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: 1; }
+  .link::after {
     content: "";
-    left: 0;
+    display: inline-block;
+    position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
-    height: 0.2rem;
-    transform: translateX(50%);
-    background: pink; }
-    .link::before:hover::before {
-      transform: translateX(0); }
+    height: 0.3rem;
+    padding: 0.2rem 1rem;
+    transform: translateX(-100%);
+    background: #b87954;
+    opacity: 0.9;
+    z-index: -1; }
+  .link:hover {
+    transform: translateX(0); }
+  .link:hover::after {
+    transform: translateX(0%);
+    transition: all 0.3s ease-in-out; }
 
 /************************************************
 ************* Gallery button
