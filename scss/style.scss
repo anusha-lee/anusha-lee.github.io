@@ -1156,3 +1156,69 @@ a {
   box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba($color-black, 0.55);
 }
 ***********************************************/
+
+/************************************************
+************* Blog Page
+***********************************************/
+.blog-container {
+  background-color: $color-light-blue;
+  margin: -10rem auto 2rem;
+  padding: 10rem 0;
+  width: 100%;
+  height: auto;
+
+  font-family: $font;
+  color: $color-white;
+
+  & section {
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    width: 95%;
+    height: max-content;
+
+    @media only screen and (min-width: 560px) {
+      width: 80%;
+    }
+
+    @media only screen and (min-width: 720px) {
+      width: 70%;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 60%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 45%;
+    }
+  }
+}
+
+.blogPage__title {
+  padding: 3rem 0;
+  font-size: $font-size-bg;
+}
+
+.post-box {
+  padding: 4rem 0 3rem;
+
+  &--title {
+    font-size: $font-size-m;
+    text-shadow: $color-black 0.1rem 0.1rem 0.1rem;
+  }
+
+  &--intro,
+  &--date,
+  &--tags {
+    font-size: $font-size-sm;
+    padding: 0.5rem 0;
+  }
+
+  &--date {
+    font-style: italic;
+    color: lighten($color-deep-blue, 70%);
+  }
+
+  // @include section-grid-mobile;
+  // grid-template-rows: minmax(23rem, max-content) min-content minmax(35%, 45%);
+}

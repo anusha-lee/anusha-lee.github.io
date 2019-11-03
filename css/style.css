@@ -894,5 +894,49 @@ a {
   box-shadow: 0.5rem 0.5rem 0.5rem -0.3rem rgba($color-black, 0.55);
 }
 ***********************************************/
+/************************************************
+************* Blog Page
+***********************************************/
+.blog-container {
+  background-color: #5493b8;
+  margin: -10rem auto 2rem;
+  padding: 10rem 0;
+  width: 100%;
+  height: auto;
+  font-family: "Nunito", sans-serif;
+  color: #f0f8ff; }
+  .blog-container section {
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    width: 95%;
+    height: max-content; }
+    @media only screen and (min-width: 560px) {
+      .blog-container section {
+        width: 80%; } }
+    @media only screen and (min-width: 720px) {
+      .blog-container section {
+        width: 70%; } }
+    @media only screen and (min-width: 900px) {
+      .blog-container section {
+        width: 60%; } }
+    @media only screen and (min-width: 1200px) {
+      .blog-container section {
+        width: 45%; } }
+
+.blogPage__title {
+  padding: 3rem 0;
+  font-size: 38px; }
+
+.post-box {
+  padding: 4rem 0 3rem; }
+  .post-box--title {
+    font-size: 28px;
+    text-shadow: #2f2f4f 0.1rem 0.1rem 0.1rem; }
+  .post-box--intro, .post-box--date, .post-box--tags {
+    font-size: 16px;
+    padding: 0.5rem 0; }
+  .post-box--date {
+    font-style: italic;
+    color: #a7daf7; }
 
 /*# sourceMappingURL=style.css.map */
