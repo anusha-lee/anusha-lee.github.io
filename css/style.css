@@ -939,4 +939,38 @@ a {
     font-style: italic;
     color: #a7daf7; }
 
+/************************************************
+************* Blog Post Content Style
+***********************************************/
+.blogContent-container {
+  background-color: #32749a;
+  margin: -10rem auto 2rem;
+  padding: 10rem 0;
+  width: 100%;
+  height: auto;
+  font-family: "Nunito", sans-serif;
+  color: #f0f8ff; }
+
+.blogContent {
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  width: 95%;
+  height: max-content; }
+  @media only screen and (min-width: 560px) {
+    .blogContent {
+      width: 80%; } }
+  @media only screen and (min-width: 720px) {
+    .blogContent {
+      width: 70%; } }
+  @media only screen and (min-width: 900px) {
+    .blogContent {
+      width: 60%; } }
+  @media only screen and (min-width: 1200px) {
+    .blogContent {
+      width: 45%; } }
+  .blogContent__box--img {
+    width: 70%;
+    height: min-auto;
+    border-radius: 0; }
+
 /*# sourceMappingURL=style.css.map */

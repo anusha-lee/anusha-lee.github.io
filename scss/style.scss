@@ -1222,3 +1222,48 @@ a {
   // @include section-grid-mobile;
   // grid-template-rows: minmax(23rem, max-content) min-content minmax(35%, 45%);
 }
+
+/************************************************
+************* Blog Post Content Style
+***********************************************/
+.blogContent-container {
+  background-color: $color-light-teal;
+  margin: -10rem auto 2rem;
+  padding: 10rem 0;
+  width: 100%;
+  height: auto;
+
+  font-family: $font;
+  color: $color-white;
+}
+
+.blogContent {
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  width: 95%;
+  height: max-content;
+
+  @media only screen and (min-width: 560px) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 720px) {
+    width: 70%;
+  }
+
+  @media only screen and (min-width: 900px) {
+    width: 60%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 45%;
+  }
+
+  &__box {
+    &--img {
+      width: 70%;
+      height: min-auto;
+      border-radius: 0;
+    }
+  }
+}
