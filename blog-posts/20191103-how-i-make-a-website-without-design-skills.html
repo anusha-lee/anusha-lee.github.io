@@ -19,10 +19,11 @@
           <span class="nav__line"></span>
           <span class="nav__line"></span>
           <ul class="nav__list">
+            <li class="nav__list--item"><a href="https://anushalee.com/">Home</a></li>
             <li class="nav__list--item"><a href="#about">About</a></li>
             <li class="nav__list--item"><a href="#skills">Skills</a></li>
             <li class="nav__list--item"><a href="#projects">Projects</a></li>
-            <li class="nav__list--item"><a href="blog.html">Blog</a></li>
+            <li class="nav__list--item"><a href="https://anushalee.com/blog.html">Blog</a></li>
             <li class="nav__list--item"><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -92,7 +93,7 @@
               <a
                 href="https://www.awwwards.com/"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >Awwwards</a
               >
               and its Collections section. Try to make it simple.
@@ -104,7 +105,7 @@
             <h4>1. Find the template and layout</h4>
             <p class="blogPage__post-box--intro">
               I came across a template website called
-              <a href="https://html5up.net/" target="_blank" class="link"
+              <a href="https://html5up.net/" target="_blank" class="text-link"
                 >HTML5up</a
               >, and you can download tons of beautiful templates with HTML,
               CSS, and JavaScript code. All you have to do is to customize
@@ -117,11 +118,13 @@
               credit. So, please remember their requests when you use them
               for free.
             </p>
-            <img
-              src="../img/blog/20191103/html5up.png"
-              alt="HTML5UP"
-              class="blogContent__box--img"
-            />
+            <div class="img-hover">
+                <img
+                src="../img/blog/20191103/html5up.png"
+                alt="HTML5UP"
+                class="blogContent__box--img"
+              />
+            </div>
 
             <h4>
               2. Define those sections you want to put on your website
@@ -134,22 +137,26 @@
               <a
                 href="https://twitter.com/learncodewithme"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >Laurence Bradford’s</a
               >
               <a
                 href="https://learntocodewith.me/"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >Learn To Code With Me</a
               >. She has a series of free courses to help you go through the
               steps.
             </p>
-            <img
-              src="../img/blog/20191103/portfolio-course.png"
-              alt="Portfolio course"
-              class="blogContent__box--img"
-            />
+
+            <div class="img-hover">
+              <img
+                src="../img/blog/20191103/portfolio-course.png"
+                alt="Portfolio course"
+                class="blogContent__box--img"
+              />
+            </div>
+            
             <p class="blogPage__post-box--intro">
               I am always intimidated to work on my portfolio website,
               mainly because I always think I don’t have many projects or
@@ -169,24 +176,27 @@
               <a
                 href="https://fontawesome.com/"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >Font Awesome</a
               >
               and
               <a
                 href="https://www.flaticon.com/"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >Flaticon</a
               >. I didn’t write much content, but the good things about
               making your website from scratch is you can always come back
               later to fix something.
             </p>
-            <img
-              src="../img/blog/20191103/github-projects.png"
-              alt="GitHub Pages"
-              class="blogContent__box--img"
-            />
+
+            <div class="img-hover">
+              <img
+                src="../img/blog/20191103/github-projects.png"
+                alt="GitHub Pages"
+                class="blogContent__box--img"
+              />
+            </div>
 
             <h4>3. Write the code? Not so fast. Do the planning first.</h4>
             <p class="blogPage__post-box--intro">
@@ -196,7 +206,7 @@
               <a
                 href="https://twitter.com/frontendmr"
                 target="_blank"
-                class="link"
+                class="text-link"
                 >mentor</a
               >
               is you have to do the planning first. I didn’t do it properly
@@ -213,18 +223,22 @@
             
 
             <h4>4. Deploy on GitHub Pages if yours is a static website</h4>
-            <p class="blogPage__post-box--intro">I’m sure you have a GitHub account and put your source code there. If you do, that is great, because there is no hassle to deploy your source code on GitHub Pages and it’s free. GigHub Pages is hosted directly from your repo and you can see it live once you finish the setup. For more details, please check out <a href="https://pages.github.com/" target="_blank" class="link">GitHub Pages</a>. You can also use Jekyll to do the blogging.</p>
-            <p class="blogPage__post-box--intro">A few things to remember is to set up the correct repo name. Go to Settings and change your repository name into <yourusername>.github.io. Scroll down Settings and you will see GitHub Pages saying your site is published at URL https://yourusername.github.io.</p>
-            <img
-              src="../img/blog/20191103/repo-name.png"
-              alt="GitHub Pages"
-              class="blogContent__box--img"
-            />
+            <p class="blogPage__post-box--intro">I’m sure you have a GitHub account and put your source code there. If you do, that is great, because there is no hassle to deploy your source code on GitHub Pages and it’s free. GigHub Pages is hosted directly from your repo and you can see it live once you finish the setup. For more details, please check out <a href="https://pages.github.com/" target="_blank" class="text-link">GitHub Pages</a>. You can also use Jekyll to do the blogging.</p>
+            <p class="blogPage__post-box--intro">A few things to remember is to set up the correct repo name. Go to Settings and change your repository name into <code><yourusername>.github.io</code>. Scroll down Settings and you will see GitHub Pages saying your site is published at URL <code>https://yourusername.github.io</code>.</p>
+            
+              <div class="img-hover">
+                <img
+                src="../img/blog/20191103/repo-name.png"
+                alt="GitHub Pages"
+                class="blogContent__box--img"
+              />
+            </div>
+            
             <p class="blogPage__post-box--intro">One of the mistakes I made was I didn’t put my index.html and style sheet on the root folder. It took me some time to realize that. Whenever you commit and push your code, you can see your website live from the URL.</p>
 
             <h4>5.Custom your domain</h4>
-            <p class="blogPage__post-box--intro">One of the great things about GitHub Pages is you can use your own domain. If you don’t have one, just buy one and use it right away. But if you are like me, transferring your domain, please remember to set up some required procedures in advance, like agreeing to transfer, changing DNS setting etc., because some of the changes take up to 24 hours more or less to go through. Please prepare those things in advance so there will be no interruption of your website. I bought my domain from <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages" target="_blank" class="link">Namecheap</a> and they have instructions to teach you how to set up GitHub Pages </p>
-            <p class="blogPage__post-box--intro">Once you finish those process, go back to the settings on your repo to GitHub Pages section. Remember to type in your correct domain name and check the box of Enforce HTTPS. If there is no surprise, your portfolio is live. Here is a <a href="https://www.youtube.com/watch?v=gmxxA32yrFU&lc=z22gfzggiszkcrnq404t1aokgywq5r2kxligdjvou5lqrk0h00410.1572023873119269" target="_blank" class="link">YouTube video</a> about how to set up custom domain (https://www.youtube.com/watch?v=gmxxA32yrFU&lc=z22gfzggiszkcrnq404t1aokgywq5r2kxligdjvou5lqrk0h00410.1572023873119269). There are so many things GitHub Pages can do for your website. If you are interested, you can explore GitHub Pages for more details.</p>
+            <p class="blogPage__post-box--intro">One of the great things about GitHub Pages is you can use your own domain. If you don’t have one, just buy one and use it right away. But if you are like me, transferring your domain, please remember to set up some required procedures in advance, like agreeing to transfer, changing DNS setting etc., because some of the changes take up to 24 hours more or less to go through. Please prepare those things in advance so there will be no interruption of your website. I bought my domain from <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages" target="_blank" class="text-link">Namecheap</a> and they have instructions to teach you how to set up GitHub Pages </p>
+            <p class="blogPage__post-box--intro">Once you finish those process, go back to the settings on your repo to GitHub Pages section. Remember to type in your correct domain name and check the box of Enforce HTTPS. If there is no surprise, your portfolio is live. Here is a <a href="https://www.youtube.com/watch?v=gmxxA32yrFU&lc=z22gfzggiszkcrnq404t1aokgywq5r2kxligdjvou5lqrk0h00410.1572023873119269" target="_blank" class="text-link">YouTube video</a> about how to set up custom domain. There are so many things GitHub Pages can do for your website. If you are interested, you can explore GitHub Pages for more details.</p>
           
             <p class="blogPage__post-box--intro">This is how I remake my website. It seems easy, but still takes me some time to finish it. Of course, things just don’t stop here. I still have to fix things, add blog posts, and add new features on my website. </p>
           </div>

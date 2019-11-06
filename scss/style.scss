@@ -1260,10 +1260,52 @@ a {
   }
 
   &__box {
-    &--img {
-      width: 70%;
-      height: min-auto;
-      border-radius: 0;
+    padding: 1rem;
+    &--title {
+      margin: 1rem 0 1.5rem;
+      font-size: $font-size-m;
+    }
+    &--text {
+      font-size: $font-size-sm;
+      line-height: 1.8;
+
+      & h4 {
+        margin: 1rem 0 0 0;
+      }
+    }
+    &--intro {
+      padding: 1rem 0 0.5rem;
+    }
+  }
+}
+
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: $color-light-blue;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color-deep-blue;
+    text-decoration: none;
+  }
+}
+
+.img-hover {
+  margin: 1rem auto;
+  position: relative;
+  width: 70%;
+  // transition: all 0.3s ease-in-out;
+
+  & img {
+    margin: 0 auto;
+    width: 100%;
+    height: min-auto;
+    border-radius: 0;
+    //transform: scale(1);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

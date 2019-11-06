@@ -968,9 +968,38 @@ a {
   @media only screen and (min-width: 1200px) {
     .blogContent {
       width: 45%; } }
-  .blogContent__box--img {
-    width: 70%;
+  .blogContent__box {
+    padding: 1rem; }
+    .blogContent__box--title {
+      margin: 1rem 0 1.5rem;
+      font-size: 28px; }
+    .blogContent__box--text {
+      font-size: 16px;
+      line-height: 1.8; }
+      .blogContent__box--text h4 {
+        margin: 1rem 0 0 0; }
+    .blogContent__box--intro {
+      padding: 1rem 0 0.5rem; }
+
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: #5493b8;
+  transition: all 0.3s ease-in-out; }
+  .text-link:hover {
+    background-color: #052334;
+    text-decoration: none; }
+
+.img-hover {
+  margin: 1rem auto;
+  position: relative;
+  width: 70%; }
+  .img-hover img {
+    margin: 0 auto;
+    width: 100%;
     height: min-auto;
-    border-radius: 0; }
+    border-radius: 0;
+    transition: all 0.3s ease-in-out; }
+    .img-hover img:hover {
+      transform: scale(1.2); }
 
 /*# sourceMappingURL=style.css.map */
