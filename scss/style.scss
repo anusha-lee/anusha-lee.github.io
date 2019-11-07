@@ -1294,18 +1294,21 @@ a {
   margin: 1rem auto;
   position: relative;
   width: 70%;
-  // transition: all 0.3s ease-in-out;
+  height: 30rem;
+  border-radius: 0;
+  overflow: hidden;
 
   & img {
     margin: 0 auto;
-    width: 100%;
-    height: min-auto;
+    width: 90%;
     border-radius: 0;
-    //transform: scale(1);
-    transition: all 0.3s ease-in-out;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.4);
     }
   }
 }

@@ -992,14 +992,19 @@ a {
 .img-hover {
   margin: 1rem auto;
   position: relative;
-  width: 70%; }
+  width: 70%;
+  height: 30rem;
+  border-radius: 0;
+  overflow: hidden; }
   .img-hover img {
     margin: 0 auto;
-    width: 100%;
-    height: min-auto;
+    width: 90%;
     border-radius: 0;
-    transition: all 0.3s ease-in-out; }
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out; }
     .img-hover img:hover {
-      transform: scale(1.2); }
+      transform: scale(1.4); }
 
 /*# sourceMappingURL=style.css.map */
